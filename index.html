@@ -4,112 +4,412 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Delirius (神志不清)</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8fafc;
+            --text-primary: #1a202c;
+            --text-secondary: #4a5568;
+            --accent-color: #667eea;
+            --border-color: #e2e8f0;
+            --card-bg: #ffffff;
+            --shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .dark-mode {
+            --bg-primary: #1a202c;
+            --bg-secondary: #2d3748;
+            --text-primary: #f7fafc;
+            --text-secondary: #cbd5e0;
+            --accent-color: #7c93e6;
+            --border-color: #4a5568;
+            --card-bg: #2d3748;
+            --shadow: 0 1px 3px rgba(0,0,0,0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        body {
+            font-family: 'Inter', 'Arial', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--bg-primary);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .chinese {
+            font-weight: 400;
+            opacity: 0.7;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-menu a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .nav-menu a:hover {
+            color: var(--accent-color);
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 3rem 0;
+            background-color: var(--bg-primary);
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .hero-welcome {
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+
+        .hero-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        .hero-description {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .hero-learn-more {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .hero-learn-more:hover {
+            text-decoration: underline;
+        }
+
+        /* Products Section */
+        .products-section {
+            padding: 3rem 0;
+            background-color: var(--bg-secondary);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: var(--text-primary);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .product-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 1.2rem;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+        }
+
+        .product-card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            color: var(--text-primary);
+        }
+
+        .product-card p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .product-card .price {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .product-card button {
+            width: 100%;
+            padding: 0.6rem;
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .product-card button:hover {
+            background-color: #5a67d8;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--bg-primary);
+            padding: 2rem 0;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .footer-section a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent-color);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav-menu {
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero-title {
+                font-size: 1.5rem;
+            }
+            
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Header Minimalista -->
+    <!-- Header -->
     <header>
         <div class="container header-content">
             <div class="logo">
                 <h1>Delirius <span class="chinese">(神志不清)</span></h1>
             </div>
             <nav class="nav-menu">
-                <a href="#inicio">Inicio</a>
-                <a href="#productos">Productos</a>
+                <a href="#inicio">INICIO</a>
+                <a href="#productos">PRODUCTOS</a>
                 <a href="#api">API</a>
-                <a href="#docs">Documentación</a>
-                <a href="#contacto">Contacto</a>
+                <a href="#documentacion">DOCUMENTACIÓN</a>
+                <a href="#contacto">CONTACTO</a>
             </nav>
-            <div class="header-icons">
-                <a href="#carrito"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></a>
+            <div class="header-right">
+                <button class="theme-toggle" id="themeToggle">🌙</button>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section Estilo Delirius -->
+    <!-- Hero Section -->
     <section class="hero" id="inicio">
         <div class="container hero-content">
-            <div class="hero-text">
-                <h2>WELCOME TO</h2>
-                <h1>The APIs and tools behind delirius</h1>
-                <p>In this section, you'll find a list of my projects, APIs, CDNs, documentation, and more all of which you can freely use in your own implementations or integrate into your projects.</p>
-                <div class="hero-buttons">
-                    <a href="#productos" class="btn btn-primary">Explorar Productos</a>
-                    <a href="#api" class="btn btn-secondary">Ver APIs</a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Delirius Products">
-            </div>
+            <div class="hero-welcome">WELCOME TO</div>
+            <h2 class="hero-title">The APIs and tools behind delirius</h2>
+            <p class="hero-description">
+                In this section, you'll find a list of my projects, APIs, CDNs, documentation, and more all of which you can freely use in your own implementations or integrate into your projects. My focus is on building tools that are both practical and accessible: public APIs ready for integration, fast and reliable CDNs for media and assets, and documentation that simplifies onboarding for developers of all levels. 
+                <a href="#learn-more" class="hero-learn-more">Learn more about me →</a>
+            </p>
         </div>
     </section>
 
-    <!-- Sección de Productos -->
+    <!-- Products Section -->
     <section class="products-section" id="productos">
         <div class="container">
-            <h2>Featured Products</h2>
-            <div class="product-grid" id="product-grid">
-                <!-- Los productos se cargarán aquí con JavaScript -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Sección API -->
-    <section class="api-section" id="api">
-        <div class="container">
-            <div class="section-header">
-                <h2>API Services</h2>
-                <p>My focus is on building tools that are both practical and accessible</p>
-            </div>
-            <div class="api-grid">
-                <div class="api-card">
-                    <i class="fas fa-code api-icon"></i>
-                    <h3>Public APIs</h3>
-                    <p>Ready for integration into your projects</p>
+            <h3 class="section-title">Featured Products</h3>
+            <div class="product-grid">
+                <div class="product-card">
+                    <h3>Premium API Access</h3>
+                    <p>Full access to all API endpoints with premium support and increased rate limits.</p>
+                    <div class="price">$29.99/mo</div>
+                    <button>Add to Cart</button>
                 </div>
-                <div class="api-card">
-                    <i class="fas fa-bolt api-icon"></i>
-                    <h3>CDN Services</h3>
-                    <p>Fast and reliable media delivery</p>
+                <div class="product-card">
+                    <h3>CDN Storage</h3>
+                    <p>High-performance content delivery network with global edge locations.</p>
+                    <div class="price">$49.99/mo</div>
+                    <button>Add to Cart</button>
                 </div>
-                <div class="api-card">
-                    <i class="fas fa-book api-icon"></i>
+                <div class="product-card">
                     <h3>Documentation</h3>
-                    <p>Simplified onboarding for developers</p>
+                    <p>Comprehensive documentation with code examples and integration guides.</p>
+                    <div class="price">$19.99/mo</div>
+                    <button>Add to Cart</button>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer id="contacto">
-        <div class="container footer-content">
-            <div class="footer-section">
-                <h3>Delirius <span class="chinese">(神志不清)</span></h3>
-                <p>Building practical and accessible tools for developers</p>
-            </div>
-            <div class="footer-section">
-                <h4>Resources</h4>
-                <a href="#api">APIs</a>
-                <a href="#docs">Documentation</a>
-                <a href="#products">Products</a>
-                <a href="#cdn">CDN</a>
-            </div>
-            <div class="footer-section">
-                <h4>Connect</h4>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-github"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-discord"></i></a>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Delirius</h4>
+                    <a href="#about">About</a>
+                    <a href="#services">Services</a>
+                    <a href="#careers">Careers</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <a href="#api">API</a>
+                    <a href="#documentation">Documentation</a>
+                    <a href="#tutorials">Tutorials</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <a href="#help">Help Center</a>
+                    <a href="#contact">Contact Us</a>
+                    <a href="#status">Status</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <a href="#twitter">Twitter</a>
+                    <a href="#github">GitHub</a>
+                    <a href="#linkedin">LinkedIn</a>
                 </div>
             </div>
-        </div>
-        <div class="copyright">
-            <p>© 2023 Delirius. All rights reserved. <a href="#learn-more">Learn more about me →</a></p>
+            <div class="copyright">
+                <p>© 2023 Delirius. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        // Toggle para modo claro/oscuro
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        
+        // Verificar preferencia del usuario
+        if (localStorage.getItem('theme') === 'dark') {
+            body.classList.add('dark-mode');
+            themeToggle.textContent = '☀️';
+        }
+        
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            
+            if (body.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+                themeToggle.textContent = '☀️';
+            } else {
+                localStorage.setItem('theme', 'light');
+                themeToggle.textContent = '🌙';
+            }
+        });
+    </script>
 </body>
 </html>
