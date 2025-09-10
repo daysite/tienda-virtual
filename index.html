@@ -44,25 +44,31 @@
             z-index: -2;
         }
 
-        /* Video en sección específica */
-        .video-section {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 60vw;
-            height: 60vh;
-            z-index: -1;
+        /* Sección principal con video y texto */
+        .main-hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             overflow: hidden;
-            border-radius: 16px;
-            box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
         }
 
-        .video-section video {
+        /* Video destacado */
+        .featured-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .featured-video video {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            opacity: 0.4;
+            opacity: 0.6;
         }
 
         .video-overlay {
@@ -71,8 +77,66 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(45deg, rgba(10, 10, 10, 0.7) 0%, rgba(10, 10, 10, 0.5) 100%);
-            border-radius: 16px;
+            background: linear-gradient(to bottom, rgba(10, 10, 10, 0.8) 0%, rgba(10, 10, 10, 0.9) 100%);
+        }
+
+        /* Contenido de texto superpuesto */
+        .video-content {
+            text-align: center;
+            max-width: 800px;
+            padding: 0 40px;
+            z-index: 2;
+        }
+
+        .welcome-text {
+            font-size: 18px;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .main-title {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            line-height: 1.2;
+            color: var(--text-color);
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .description {
+            font-size: 18px;
+            color: var(--secondary-color);
+            line-height: 1.7;
+            margin-bottom: 35px;
+        }
+
+        .learn-more {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            font-size: 16px;
+        }
+
+        .learn-more:hover {
+            gap: 12px;
+        }
+
+        .learn-more-arrow {
+            transition: transform 0.3s ease;
+        }
+
+        .learn-more:hover .learn-more-arrow {
+            transform: translateX(4px);
         }
 
         /* Header - Más pequeño como en la referencia */
@@ -204,54 +268,6 @@
             color: var(--accent-color);
         }
 
-        /* Hero Section - Réplica EXACTA */
-        .hero {
-            padding: 130px 40px 80px;
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero-title {
-            font-size: 42px;
-            font-weight: 700;
-            margin-bottom: 25px;
-            line-height: 1.2;
-            color: var(--text-color);
-        }
-
-        .hero-description {
-            font-size: 18px;
-            color: var(--secondary-color);
-            line-height: 1.7;
-            margin-bottom: 35px;
-        }
-
-        .hero-learn-more {
-            color: var(--accent-color);
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.3s ease;
-            font-size: 16px;
-        }
-
-        .hero-learn-more:hover {
-            gap: 12px;
-        }
-
-        .learn-more-arrow {
-            transition: transform 0.3s ease;
-        }
-
-        .hero-learn-more:hover .learn-more-arrow {
-            transform: translateX(4px);
-        }
-
         /* Products Section */
         .products-section {
             padding: 80px 40px;
@@ -339,7 +355,7 @@
         }
 
         .light-theme .video-overlay {
-            background: linear-gradient(45deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.5) 100%);
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.9) 100%);
         }
 
         .light-theme .theme-option {
@@ -350,18 +366,25 @@
             background-color: var(--text-color);
         }
 
+        .light-theme .main-title {
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
         /* Responsive */
         @media (max-width: 968px) {
             header {
                 padding: 10px 20px;
             }
 
-            .hero {
-                padding: 110px 20px 60px;
+            .video-content {
+                padding: 0 20px;
             }
 
-            .hero-title {
-                font-size: 32px;
+            .main-title {
+                font-size: 36px;
             }
 
             .products-section {
@@ -371,19 +394,14 @@
             .dropdown-menu {
                 right: 20px;
             }
-            
-            .video-section {
-                width: 80vw;
-                height: 50vh;
-            }
         }
 
         @media (max-width: 600px) {
-            .hero-title {
+            .main-title {
                 font-size: 28px;
             }
 
-            .hero-description {
+            .description {
                 font-size: 16px;
             }
 
@@ -395,9 +413,8 @@
                 gap: 10px;
             }
             
-            .video-section {
-                width: 90vw;
-                height: 40vh;
+            .welcome-text {
+                font-size: 14px;
             }
         }
     </style>
@@ -406,13 +423,23 @@
     <!-- Fondo general -->
     <div class="main-background"></div>
     
-    <!-- Video en sección específica -->
-    <div class="video-section">
-        <video autoplay muted loop playsinline>
-            <source src="https://files.catbox.moe/4fn0vj.mp4" type="video/mp4">
-            <!-- Fuente alternativa si el video no carga -->
-        </video>
-        <div class="video-overlay"></div>
+    <!-- Sección principal con video y texto -->
+    <div class="main-hero">
+        <div class="featured-video">
+            <video autoplay muted loop playsinline>
+                <source src="https://files.catbox.moe/4fn0vj.mp4" type="video/mp4">
+            </video>
+            <div class="video-overlay"></div>
+        </div>
+        
+        <div class="video-content">
+            <div class="welcome-text">WELCOME TO</div>
+            <h1 class="main-title">The APIs and tools behind delirius</h1>
+            <p class="description">
+                In this section, you'll find a list of my projects, APIs, CDNs, documentation, and more all of which you can freely use in your own implementations or integrate into your projects. My focus is on building tools that are both practical and accessible: public APIs ready for integration, fast and reliable CDNs for media and assets, and documentation that simplifies onboarding for developers of all levels. 
+                <a href="#learn-more" class="learn-more">Learn more about me <span class="learn-more-arrow">→</span></a>
+            </p>
+        </div>
     </div>
 
     <!-- Header - Más pequeño como en la referencia -->
@@ -445,15 +472,6 @@
         <a href="#others">Others</a>
         <a href="#api">Api</a>
     </div>
-
-    <!-- Hero Section - Texto EXACTO -->
-    <section class="hero">
-        <h1 class="hero-title">The APIs and tools behind delirius</h1>
-        <p class="hero-description">
-            In this section, you'll find a list of my projects, APIs, CDNs, documentation, and more all of which you can freely use in your own implementations or integrate into your projects. My focus is on building tools that are both practical and accessible: public APIs ready for integration, fast and reliable CDNs for media and assets, and documentation that simplifies onboarding for developers of all levels. 
-            <a href="#learn-more" class="hero-learn-more">Learn more about me <span class="learn-more-arrow">→</span></a>
-        </p>
-    </section>
 
     <!-- Products Section -->
     <section class="products-section">
