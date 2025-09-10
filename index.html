@@ -33,36 +33,15 @@
             overflow-x: hidden;
         }
 
-        /* Video de fondo */
-        .video-background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            overflow: hidden;
-        }
-
-        .video-background video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.2;
-        }
-
-        .video-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, rgba(10, 10, 10, 0.9) 0%, rgba(10, 10, 10, 0.7) 100%);
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
         /* Header - Réplica EXACTA de Delirius */
         header {
-            padding: 15px 40px;
+            padding: 15px 0;
             position: fixed;
             top: 0;
             left: 0;
@@ -74,6 +53,16 @@
             align-items: center;
             border-bottom: 1px solid var(--border-color);
             backdrop-filter: blur(10px);
+        }
+
+        .header-content {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .logo {
@@ -94,20 +83,11 @@
             font-weight: 400;
         }
 
-        /* Menú hamburguesa y navegación */
-        .nav-container {
+        /* Menú de navegación principal */
+        .main-nav {
             display: flex;
-            align-items: center;
             gap: 30px;
-        }
-
-        .menu-toggle {
-            background: none;
-            border: none;
-            color: var(--text-color);
-            cursor: pointer;
-            font-size: 20px;
-            display: none;
+            align-items: center;
         }
 
         .nav-menu {
@@ -137,19 +117,17 @@
             background-color: rgba(99, 102, 241, 0.1);
         }
 
-        /* Selector de tema - Réplica EXACTA */
+        /* Selector de tema - Estilo Delirius */
         .theme-selector {
             display: flex;
-            align-items: center;
-            gap: 10px;
             background-color: var(--card-bg);
-            padding: 8px 15px;
+            padding: 4px;
             border-radius: 20px;
             border: 1px solid var(--border-color);
         }
 
         .theme-option {
-            padding: 6px 12px;
+            padding: 6px 15px;
             border-radius: 15px;
             cursor: pointer;
             font-size: 12px;
@@ -162,22 +140,26 @@
             color: white;
         }
 
-        /* Contenido principal */
-        .main-content {
-            margin-top: 80px;
-            padding: 40px;
+        /* Menú hamburguesa para móvil */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-color);
+            cursor: pointer;
+            font-size: 20px;
         }
 
         /* Hero Section - Réplica EXACTA */
         .hero {
+            padding: 120px 0 80px;
+            text-align: center;
             max-width: 800px;
             margin: 0 auto;
-            padding: 80px 0 60px;
-            text-align: center;
         }
 
         .hero-title {
-            font-size: 48px;
+            font-size: 42px;
             font-weight: 700;
             margin-bottom: 20px;
             line-height: 1.2;
@@ -188,13 +170,10 @@
         }
 
         .hero-description {
-            font-size: 18px;
+            font-size: 16px;
             color: var(--secondary-color);
             line-height: 1.6;
-            margin-bottom: 40px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+            margin-bottom: 30px;
         }
 
         .hero-learn-more {
@@ -205,7 +184,6 @@
             align-items: center;
             gap: 8px;
             transition: all 0.2s;
-            font-size: 16px;
         }
 
         .hero-learn-more:hover {
@@ -327,10 +305,6 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
         }
 
-        .light-theme .video-overlay {
-            background: linear-gradient(45deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%);
-        }
-
         /* Menú móvil */
         .mobile-menu {
             position: fixed;
@@ -339,11 +313,11 @@
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: 10px;
-            padding: 15px;
+            padding: 20px;
             z-index: 999;
             display: none;
             flex-direction: column;
-            gap: 10px;
+            gap: 15px;
             min-width: 200px;
             backdrop-filter: blur(10px);
         }
@@ -358,6 +332,7 @@
             padding: 10px 15px;
             border-radius: 6px;
             transition: all 0.2s;
+            font-size: 14px;
         }
 
         .mobile-menu a:hover {
@@ -365,47 +340,42 @@
             color: var(--accent-color);
         }
 
+        .mobile-theme-selector {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            padding: 10px;
+            background-color: rgba(99, 102, 241, 0.1);
+            border-radius: 8px;
+            justify-content: center;
+        }
+
         /* Responsive */
         @media (max-width: 968px) {
-            header {
-                padding: 15px 20px;
+            .nav-menu {
+                display: none;
             }
 
             .menu-toggle {
                 display: block;
             }
 
-            .nav-menu {
-                display: none;
-            }
-
-            .theme-selector {
-                display: none;
-            }
-
-            .mobile-theme-selector {
-                display: flex;
-                gap: 10px;
-                justify-content: center;
-                margin-top: 15px;
-            }
-
             .hero-title {
                 font-size: 36px;
-            }
-
-            .hero-description {
-                font-size: 16px;
             }
         }
 
         @media (max-width: 600px) {
-            .main-content {
-                padding: 20px;
+            .hero {
+                padding: 100px 20px 60px;
             }
 
             .hero-title {
                 font-size: 28px;
+            }
+
+            .products-section {
+                padding: 60px 20px;
             }
 
             .product-grid {
@@ -415,40 +385,31 @@
     </style>
 </head>
 <body>
-    <!-- Video de fondo -->
-    <div class="video-background">
-        <video autoplay muted loop>
-            <source src="https://assets.mixkit.co/videos/preview/mixkit-abstract-digital-waves-9885-large.mp4" type="video/mp4">
-        </video>
-        <div class="video-overlay"></div>
-    </div>
-
     <!-- Header - Réplica EXACTA -->
     <header>
-        <div class="logo">
-            Delirius <span class="chinese">(神志不清)</span>
-        </div>
-
-        <div class="nav-container">
-            <!-- Menú de navegación -->
-            <nav class="nav-menu">
-                <a href="#gallery">Gallery</a>
-                <a href="#about">About</a>
-                <a href="#blog">Blog</a>
-                <a href="#others">Others</a>
-                <a href="#api">Api</a>
-            </nav>
-
-            <!-- Selector de tema - Réplica EXACTA -->
-            <div class="theme-selector">
-                <div class="theme-option active" data-theme="dark">Dark</div>
-                <div class="theme-option" data-theme="light">Light</div>
+        <div class="header-content">
+            <div class="logo">
+                Delirius <span class="chinese">(神志不清)</span>
             </div>
 
-            <!-- Menú hamburguesa para móvil -->
-            <button class="menu-toggle" id="menuToggle">
-                <i class="fas fa-bars"></i>
-            </button>
+            <div class="main-nav">
+                <nav class="nav-menu">
+                    <a href="#gallery">Gallery</a>
+                    <a href="#about">About</a>
+                    <a href="#blog">Blog</a>
+                    <a href="#others">Others</a>
+                    <a href="#api">Api</a>
+                </nav>
+
+                <div class="theme-selector">
+                    <div class="theme-option active" data-theme="dark">Dark</div>
+                    <div class="theme-option" data-theme="light">Light</div>
+                </div>
+
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
         </div>
     </header>
 
@@ -465,19 +426,20 @@
         </div>
     </div>
 
-    <!-- Contenido principal -->
-    <main class="main-content">
-        <!-- Hero Section -->
-        <section class="hero">
+    <!-- Hero Section - Texto EXACTO -->
+    <section class="hero">
+        <div class="container">
             <h1 class="hero-title">The APIs and tools behind delirius</h1>
             <p class="hero-description">
                 In this section, you'll find a list of my projects, APIs, CDNs, documentation, and more all of which you can freely use in your own implementations or integrate into your projects. My focus is on building tools that are both practical and accessible: public APIs ready for integration, fast and reliable CDNs for media and assets, and documentation that simplifies onboarding for developers of all levels. 
                 <a href="#learn-more" class="hero-learn-more">Learn more about me →</a>
             </p>
-        </section>
+        </div>
+    </section>
 
-        <!-- Products Section -->
-        <section class="products-section">
+    <!-- Products Section -->
+    <section class="products-section">
+        <div class="container">
             <h2 class="section-title">FEATURED PRODUCTS</h2>
             <div class="product-grid">
                 <div class="product-card">
@@ -499,8 +461,8 @@
                     <button class="product-button">Add to Cart</button>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
     <script>
         // Toggle para el menú móvil
@@ -526,7 +488,10 @@
         themeOptions.forEach(option => {
             option.addEventListener('click', () => {
                 // Remover clase active de todos
-                document.querySelectorAll('.theme-option').forEach(opt => opt.classList.remove('active'));
+                document.querySelectorAll('.theme-option').forEach(opt => {
+                    opt.classList.remove('active');
+                });
+                
                 // Agregar clase active al seleccionado
                 option.classList.add('active');
                 
