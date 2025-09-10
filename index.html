@@ -33,40 +33,50 @@
             overflow-x: hidden;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+        /* Video de fondo */
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .video-background video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.15;
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(10, 10, 10, 0.95) 0%, rgba(10, 10, 10, 0.85) 100%);
         }
 
         /* Header - Réplica EXACTA de Delirius */
         header {
-            padding: 15px 0;
+            padding: 20px 40px;
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
-            background-color: rgba(10, 10, 10, 0.95);
+            background-color: rgba(10, 10, 10, 0.8);
             z-index: 1000;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid var(--border-color);
             backdrop-filter: blur(10px);
         }
 
-        .header-content {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
         .logo {
-            font-size: 22px;
+            font-size: 24px;
             font-weight: 700;
             display: flex;
             align-items: center;
@@ -78,46 +88,19 @@
 
         .chinese {
             font-size: 14px;
-            margin-left: 5px;
+            margin-left: 8px;
             opacity: 0.8;
             font-weight: 400;
         }
 
-        /* Menú de navegación principal */
-        .main-nav {
+        /* Contenedor de la derecha con selector de tema y menú */
+        .header-right {
             display: flex;
-            gap: 30px;
             align-items: center;
-        }
-
-        .nav-menu {
-            display: flex;
             gap: 25px;
         }
 
-        .nav-menu a {
-            color: var(--text-color);
-            text-decoration: none;
-            font-size: 13px;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            transition: all 0.2s;
-            opacity: 0.9;
-            padding: 8px 12px;
-            border-radius: 6px;
-        }
-
-        .nav-menu a:hover {
-            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            opacity: 1;
-            background-color: rgba(99, 102, 241, 0.1);
-        }
-
-        /* Selector de tema - Estilo Delirius */
+        /* Selector de tema - Estilo Delirius EXACTO */
         .theme-selector {
             display: flex;
             background-color: var(--card-bg);
@@ -127,12 +110,12 @@
         }
 
         .theme-option {
-            padding: 6px 15px;
-            border-radius: 15px;
+            padding: 8px 16px;
+            border-radius: 16px;
             cursor: pointer;
-            font-size: 12px;
-            font-weight: 500;
-            transition: all 0.2s;
+            font-size: 13px;
+            font-weight: 600;
+            transition: all 0.3s ease;
         }
 
         .theme-option.active {
@@ -140,28 +123,74 @@
             color: white;
         }
 
-        /* Menú hamburguesa para móvil */
+        /* Botón de menú hamburguesa */
         .menu-toggle {
-            display: none;
             background: none;
             border: none;
             color: var(--text-color);
             cursor: pointer;
-            font-size: 20px;
+            font-size: 22px;
+            padding: 8px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .menu-toggle:hover {
+            background-color: rgba(99, 102, 241, 0.1);
+        }
+
+        /* Menú desplegable */
+        .dropdown-menu {
+            position: fixed;
+            top: 70px;
+            right: 40px;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            z-index: 1000;
+            display: none;
+            flex-direction: column;
+            gap: 12px;
+            min-width: 200px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .dropdown-menu.active {
+            display: flex;
+        }
+
+        .dropdown-menu a {
+            color: var(--text-color);
+            text-decoration: none;
+            padding: 12px 16px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: rgba(99, 102, 241, 0.1);
+            color: var(--accent-color);
         }
 
         /* Hero Section - Réplica EXACTA */
         .hero {
-            padding: 120px 0 80px;
+            padding: 150px 40px 100px;
             text-align: center;
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
         .hero-title {
-            font-size: 42px;
+            font-size: 48px;
             font-weight: 700;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             line-height: 1.2;
             background: linear-gradient(135deg, #ffffff, #a1a1aa);
             -webkit-background-clip: text;
@@ -170,20 +199,21 @@
         }
 
         .hero-description {
-            font-size: 16px;
+            font-size: 18px;
             color: var(--secondary-color);
-            line-height: 1.6;
-            margin-bottom: 30px;
+            line-height: 1.7;
+            margin-bottom: 35px;
         }
 
         .hero-learn-more {
             color: var(--accent-color);
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            transition: all 0.2s;
+            transition: all 0.3s ease;
+            font-size: 16px;
         }
 
         .hero-learn-more:hover {
@@ -192,31 +222,31 @@
 
         /* Products Section */
         .products-section {
-            padding: 80px 0;
+            padding: 100px 40px;
             border-top: 1px solid var(--border-color);
         }
 
         .section-title {
             font-size: 16px;
             font-weight: 600;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             color: var(--secondary-color);
             text-align: center;
         }
 
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 35px;
         }
 
         .product-card {
             background-color: var(--card-bg);
-            border-radius: 12px;
-            padding: 25px;
-            transition: all 0.3s;
+            border-radius: 14px;
+            padding: 30px;
+            transition: all 0.3s ease;
             border: 1px solid var(--border-color);
             position: relative;
             overflow: hidden;
@@ -231,12 +261,12 @@
             height: 2px;
             background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
             opacity: 0;
-            transition: opacity 0.3s;
+            transition: opacity 0.3s ease;
         }
 
         .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
         }
 
         .product-card:hover:before {
@@ -244,40 +274,40 @@
         }
 
         .product-card h3 {
-            font-size: 18px;
-            margin-bottom: 12px;
+            font-size: 20px;
+            margin-bottom: 15px;
             font-weight: 600;
             color: white;
         }
 
         .product-card p {
             color: var(--secondary-color);
-            font-size: 14px;
-            margin-bottom: 20px;
-            line-height: 1.5;
+            font-size: 15px;
+            margin-bottom: 25px;
+            line-height: 1.6;
         }
 
         .product-price {
-            font-size: 22px;
+            font-size: 24px;
             font-weight: 700;
             background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         .product-button {
             width: 100%;
-            padding: 12px;
+            padding: 14px;
             background: transparent;
             color: var(--text-color);
             border: 1px solid var(--border-color);
-            border-radius: 6px;
+            border-radius: 8px;
             cursor: pointer;
-            font-weight: 500;
-            transition: all 0.3s;
-            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 15px;
         }
 
         .product-button:hover {
@@ -290,8 +320,12 @@
             --bg-color: #ffffff;
             --text-color: #18181b;
             --secondary-color: #71717a;
-            --card-bg: #fafafa;
-            --border-color: #e4e4e7;
+            --card-bg: #f8fafc;
+            --border-color: #e2e8f0;
+        }
+
+        .light-theme .video-overlay {
+            background: linear-gradient(45deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 100%);
         }
 
         .light-theme .hero-title {
@@ -302,125 +336,98 @@
         }
 
         .light-theme .product-card {
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
         }
 
-        /* Menú móvil */
-        .mobile-menu {
-            position: fixed;
-            top: 70px;
-            right: 20px;
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-            padding: 20px;
-            z-index: 999;
-            display: none;
-            flex-direction: column;
-            gap: 15px;
-            min-width: 200px;
-            backdrop-filter: blur(10px);
-        }
-
-        .mobile-menu.active {
-            display: flex;
-        }
-
-        .mobile-menu a {
-            color: var(--text-color);
-            text-decoration: none;
-            padding: 10px 15px;
-            border-radius: 6px;
-            transition: all 0.2s;
-            font-size: 14px;
-        }
-
-        .mobile-menu a:hover {
-            background-color: rgba(99, 102, 241, 0.1);
-            color: var(--accent-color);
-        }
-
-        .mobile-theme-selector {
-            display: flex;
-            gap: 10px;
-            margin-top: 15px;
-            padding: 10px;
-            background-color: rgba(99, 102, 241, 0.1);
-            border-radius: 8px;
-            justify-content: center;
+        .light-theme .dropdown-menu {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
 
         /* Responsive */
         @media (max-width: 968px) {
-            .nav-menu {
-                display: none;
+            header {
+                padding: 15px 20px;
             }
 
-            .menu-toggle {
-                display: block;
+            .hero {
+                padding: 120px 20px 80px;
             }
 
             .hero-title {
                 font-size: 36px;
             }
+
+            .products-section {
+                padding: 80px 20px;
+            }
         }
 
         @media (max-width: 600px) {
-            .hero {
-                padding: 100px 20px 60px;
-            }
-
             .hero-title {
-                font-size: 28px;
+                font-size: 32px;
             }
 
-            .products-section {
-                padding: 60px 20px;
+            .hero-description {
+                font-size: 16px;
             }
 
             .product-grid {
                 grid-template-columns: 1fr;
             }
+
+            .theme-selector {
+                display: none;
+            }
+
+            .mobile-theme-selector {
+                display: flex;
+                gap: 10px;
+                margin-top: 15px;
+                padding: 12px;
+                background-color: rgba(99, 102, 241, 0.1);
+                border-radius: 10px;
+                justify-content: center;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Video de fondo -->
+    <div class="video-background">
+        <video autoplay muted loop>
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-abstract-digital-waves-9885-large.mp4" type="video/mp4">
+        </video>
+        <div class="video-overlay"></div>
+    </div>
+
     <!-- Header - Réplica EXACTA -->
     <header>
-        <div class="header-content">
-            <div class="logo">
-                Delirius <span class="chinese">(神志不清)</span>
+        <div class="logo">
+            Delirius <span class="chinese">(神志不清)</span>
+        </div>
+
+        <div class="header-right">
+            <!-- Selector de tema -->
+            <div class="theme-selector">
+                <div class="theme-option active" data-theme="dark">Dark</div>
+                <div class="theme-option" data-theme="light">Light</div>
             </div>
 
-            <div class="main-nav">
-                <nav class="nav-menu">
-                    <a href="#gallery">Gallery</a>
-                    <a href="#about">About</a>
-                    <a href="#blog">Blog</a>
-                    <a href="#others">Others</a>
-                    <a href="#api">Api</a>
-                </nav>
-
-                <div class="theme-selector">
-                    <div class="theme-option active" data-theme="dark">Dark</div>
-                    <div class="theme-option" data-theme="light">Light</div>
-                </div>
-
-                <button class="menu-toggle" id="menuToggle">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
+            <!-- Botón de menú hamburguesa (3 rayitas) -->
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </header>
 
-    <!-- Menú móvil -->
-    <div class="mobile-menu" id="mobileMenu">
+    <!-- Menú desplegable -->
+    <div class="dropdown-menu" id="dropdownMenu">
         <a href="#gallery">Gallery</a>
         <a href="#about">About</a>
         <a href="#blog">Blog</a>
         <a href="#others">Others</a>
         <a href="#api">Api</a>
-        <div class="mobile-theme-selector">
+        <div class="mobile-theme-selector" style="display: none;">
             <div class="theme-option active" data-theme="dark">Dark</div>
             <div class="theme-option" data-theme="light">Light</div>
         </div>
@@ -428,56 +435,52 @@
 
     <!-- Hero Section - Texto EXACTO -->
     <section class="hero">
-        <div class="container">
-            <h1 class="hero-title">The APIs and tools behind delirius</h1>
-            <p class="hero-description">
-                In this section, you'll find a list of my projects, APIs, CDNs, documentation, and more all of which you can freely use in your own implementations or integrate into your projects. My focus is on building tools that are both practical and accessible: public APIs ready for integration, fast and reliable CDNs for media and assets, and documentation that simplifies onboarding for developers of all levels. 
-                <a href="#learn-more" class="hero-learn-more">Learn more about me →</a>
-            </p>
-        </div>
+        <h1 class="hero-title">The APIs and tools behind delirius</h1>
+        <p class="hero-description">
+            In this section, you'll find a list of my projects, APIs, CDNs, documentation, and more all of which you can freely use in your own implementations or integrate into your projects. My focus is on building tools that are both practical and accessible: public APIs ready for integration, fast and reliable CDNs for media and assets, and documentation that simplifies onboarding for developers of all levels. 
+            <a href="#learn-more" class="hero-learn-more">Learn more about me →</a>
+        </p>
     </section>
 
     <!-- Products Section -->
     <section class="products-section">
-        <div class="container">
-            <h2 class="section-title">FEATURED PRODUCTS</h2>
-            <div class="product-grid">
-                <div class="product-card">
-                    <h3>API Access</h3>
-                    <p>Complete API access with documentation and support for all your integration needs.</p>
-                    <div class="product-price">$29.99/mo</div>
-                    <button class="product-button">Add to Cart</button>
-                </div>
-                <div class="product-card">
-                    <h3>CDN Network</h3>
-                    <p>Global content delivery network with edge locations for fast media delivery.</p>
-                    <div class="product-price">$49.99/mo</div>
-                    <button class="product-button">Add to Cart</button>
-                </div>
-                <div class="product-card">
-                    <h3>Storage Solution</h3>
-                    <p>Secure cloud storage with high availability and redundancy for your data.</p>
-                    <div class="product-price">$19.99/mo</div>
-                    <button class="product-button">Add to Cart</button>
-                </div>
+        <h2 class="section-title">FEATURED PRODUCTS</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <h3>API Access</h3>
+                <p>Complete API access with documentation and support for all your integration needs.</p>
+                <div class="product-price">$29.99/mo</div>
+                <button class="product-button">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <h3>CDN Network</h3>
+                <p>Global content delivery network with edge locations for fast media delivery.</p>
+                <div class="product-price">$49.99/mo</div>
+                <button class="product-button">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <h3>Storage Solution</h3>
+                <p>Secure cloud storage with high availability and redundancy for your data.</p>
+                <div class="product-price">$19.99/mo</div>
+                <button class="product-button">Add to Cart</button>
             </div>
         </div>
     </section>
 
     <script>
-        // Toggle para el menú móvil
+        // Toggle para el menú desplegable
         const menuToggle = document.getElementById('menuToggle');
-        const mobileMenu = document.getElementById('mobileMenu');
+        const dropdownMenu = document.getElementById('dropdownMenu');
         
         menuToggle.addEventListener('click', (e) => {
             e.stopPropagation();
-            mobileMenu.classList.toggle('active');
+            dropdownMenu.classList.toggle('active');
         });
 
         // Cerrar menú al hacer clic fuera
         document.addEventListener('click', (e) => {
-            if (!mobileMenu.contains(e.target) && !menuToggle.contains(e.target)) {
-                mobileMenu.classList.remove('active');
+            if (!dropdownMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+                dropdownMenu.classList.remove('active');
             }
         });
 
@@ -518,6 +521,22 @@
                 }
             });
         }
+
+        // Mostrar selector de tema en móvil
+        if (window.innerWidth <= 600) {
+            document.querySelector('.mobile-theme-selector').style.display = 'flex';
+            document.querySelector('.theme-selector').style.display = 'none';
+        }
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth <= 600) {
+                document.querySelector('.mobile-theme-selector').style.display = 'flex';
+                document.querySelector('.theme-selector').style.display = 'none';
+            } else {
+                document.querySelector('.mobile-theme-selector').style.display = 'none';
+                document.querySelector('.theme-selector').style.display = 'flex';
+            }
+        });
     </script>
 </body>
 </html>
