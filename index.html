@@ -6,14 +6,15 @@
     <title>Delirius Store</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-6.4.0/css/all.min.css">
     <style>
-        /* Estilos base - Réplica exacta de Delirius.store */
+        /* Estilos base - Réplica EXACTA de Delirius.store */
         :root {
             --bg-color: #0a0a0a;
             --text-color: #ffffff;
             --accent-color: #3b82f6;
-            --secondary-color: #6b7280;
+            --secondary-color: #9ca3af;
             --card-bg: #111827;
             --border-color: #1f2937;
+            --header-height: 60px;
         }
 
         * {
@@ -29,41 +30,52 @@
             line-height: 1.6;
             font-size: 14px;
             overflow-x: hidden;
+            padding-top: var(--header-height);
         }
 
         .container {
             max-width: 1000px;
             margin: 0 auto;
-            padding: 0 15px;
+            padding: 0 20px;
         }
 
-        /* Header - Estilo Delirius exacto */
+        /* Header - Réplica EXACTA de Delirius */
         header {
-            padding: 15px 0;
-            border-bottom: 1px solid var(--border-color);
-            position: sticky;
+            height: var(--header-height);
+            padding: 0;
+            position: fixed;
             top: 0;
+            left: 0;
+            right: 0;
             background-color: var(--bg-color);
             z-index: 1000;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
         }
 
-        .header-content {
+        .header-container {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .logo {
-            font-size: 22px;
+            font-size: 20px;
             font-weight: 700;
             display: flex;
             align-items: center;
         }
 
         .chinese {
-            font-size: 14px;
+            font-size: 12px;
             margin-left: 5px;
             opacity: 0.8;
+            font-weight: 400;
         }
 
         .nav-menu {
@@ -79,10 +91,12 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
             transition: color 0.2s;
+            opacity: 0.9;
         }
 
         .nav-menu a:hover {
             color: var(--accent-color);
+            opacity: 1;
         }
 
         .header-actions {
@@ -97,11 +111,17 @@
             color: var(--text-color);
             cursor: pointer;
             font-size: 16px;
+            opacity: 0.8;
+            transition: opacity 0.2s;
         }
 
-        /* Hero Section - Réplica exacta */
+        .theme-toggle:hover {
+            opacity: 1;
+        }
+
+        /* Hero Section - Réplica EXACTA */
         .hero {
-            padding: 60px 0;
+            padding: 80px 0 60px;
             text-align: center;
         }
 
@@ -112,6 +132,7 @@
             color: var(--accent-color);
             margin-bottom: 15px;
             font-weight: 600;
+            opacity: 0.9;
         }
 
         .hero-title {
@@ -119,6 +140,9 @@
             font-weight: 700;
             margin-bottom: 20px;
             line-height: 1.2;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .hero-description {
@@ -127,6 +151,7 @@
             max-width: 700px;
             margin: 0 auto 30px;
             line-height: 1.6;
+            font-weight: 400;
         }
 
         .hero-cta {
@@ -138,6 +163,7 @@
             border-radius: 5px;
             font-weight: 500;
             transition: background-color 0.2s;
+            font-size: 14px;
         }
 
         .hero-cta:hover {
@@ -146,28 +172,30 @@
 
         /* Products Section */
         .products-section {
-            padding: 50px 0;
+            padding: 60px 0;
+            border-top: 1px solid var(--border-color);
         }
 
         .section-title {
-            font-size: 20px;
+            font-size: 16px;
             font-weight: 600;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
             text-align: center;
             text-transform: uppercase;
             letter-spacing: 1px;
+            color: var(--secondary-color);
         }
 
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
         }
 
         .product-card {
             background-color: var(--card-bg);
             border-radius: 8px;
-            padding: 20px;
+            padding: 25px;
             transition: transform 0.2s;
             border: 1px solid var(--border-color);
         }
@@ -177,58 +205,60 @@
         }
 
         .product-card h3 {
-            font-size: 16px;
-            margin-bottom: 10px;
+            font-size: 18px;
+            margin-bottom: 12px;
             font-weight: 600;
         }
 
         .product-card p {
             color: var(--secondary-color);
-            font-size: 13px;
-            margin-bottom: 15px;
+            font-size: 14px;
+            margin-bottom: 20px;
             line-height: 1.5;
         }
 
         .product-price {
-            font-size: 18px;
+            font-size: 20px;
             font-weight: 700;
             color: var(--accent-color);
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
         .product-button {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             background-color: transparent;
             color: var(--text-color);
             border: 1px solid var(--border-color);
             border-radius: 5px;
             cursor: pointer;
             font-weight: 500;
-            transition: background-color 0.2s;
+            transition: all 0.2s;
+            font-size: 14px;
         }
 
         .product-button:hover {
             background-color: var(--accent-color);
+            border-color: var(--accent-color);
         }
 
         /* Footer */
         footer {
-            padding: 40px 0;
+            padding: 60px 0 40px;
             border-top: 1px solid var(--border-color);
-            margin-top: 50px;
+            margin-top: 20px;
         }
 
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
+            gap: 40px;
         }
 
         .footer-section h4 {
             font-size: 14px;
             font-weight: 600;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
@@ -237,8 +267,8 @@
             display: block;
             color: var(--secondary-color);
             text-decoration: none;
-            margin-bottom: 8px;
-            font-size: 13px;
+            margin-bottom: 12px;
+            font-size: 14px;
             transition: color 0.2s;
         }
 
@@ -248,37 +278,48 @@
 
         .copyright {
             text-align: center;
-            margin-top: 40px;
-            padding-top: 20px;
+            margin-top: 60px;
+            padding-top: 30px;
             border-top: 1px solid var(--border-color);
             color: var(--secondary-color);
-            font-size: 12px;
+            font-size: 13px;
         }
 
-        /* Tema claro */
+        /* Tema claro - Réplica exacta del modo claro */
         .light-theme {
             --bg-color: #ffffff;
-            --text-color: #111827;
-            --secondary-color: #6b7280;
-            --card-bg: #f9fafb;
+            --text-color: #171717;
+            --secondary-color: #737373;
+            --card-bg: #f8fafc;
             --border-color: #e5e7eb;
+            --accent-color: #3b82f6;
+        }
+
+        /* Ajustes específicos para modo claro */
+        .light-theme .product-card {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
         }
 
         /* Responsive */
         @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                gap: 15px;
+            .header-container {
+                padding: 0 15px;
             }
             
             .nav-menu {
                 gap: 15px;
-                flex-wrap: wrap;
-                justify-content: center;
+            }
+            
+            .nav-menu a {
+                font-size: 12px;
+            }
+            
+            .hero {
+                padding: 60px 0 40px;
             }
             
             .hero-title {
-                font-size: 24px;
+                font-size: 26px;
             }
             
             .product-grid {
@@ -287,24 +328,39 @@
             
             .footer-content {
                 grid-template-columns: 1fr;
-                text-align: center;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .header-container {
+                justify-content: center;
+            }
+            
+            .header-actions {
+                position: absolute;
+                right: 15px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
+    <!-- Header - Réplica exacta -->
     <header>
-        <div class="container header-content">
+        <div class="header-container">
             <div class="logo">
                 Delirius <span class="chinese">(神志不清)</span>
             </div>
             <nav class="nav-menu">
-                <a href="#inicio">Inicio</a>
-                <a href="#productos">Productos</a>
+                <a href="#inicio">INICIO</a>
+                <a href="#productos">PRODUCTOS</a>
                 <a href="#api">API</a>
-                <a href="#documentacion">Documentación</a>
-                <a href="#contacto">Contacto</a>
+                <a href="#documentacion">DOCUMENTACIÓN</a>
+                <a href="#contacto">CONTACTO</a>
             </nav>
             <div class="header-actions">
                 <button class="theme-toggle" id="themeToggle">🌙</button>
@@ -312,7 +368,7 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section - Texto EXACTO como en las imágenes -->
     <section class="hero" id="inicio">
         <div class="container">
             <div class="hero-welcome">WELCOME TO</div>
@@ -327,7 +383,7 @@
     <!-- Products Section -->
     <section class="products-section" id="productos">
         <div class="container">
-            <h2 class="section-title">Featured Products</h2>
+            <h2 class="section-title">FEATURED PRODUCTS</h2>
             <div class="product-grid">
                 <div class="product-card">
                     <h3>API Access</h3>
@@ -397,6 +453,8 @@
         if (savedTheme === 'light') {
             body.classList.add('light-theme');
             themeToggle.textContent = '☀️';
+        } else {
+            themeToggle.textContent = '🌙';
         }
         
         themeToggle.addEventListener('click', () => {
