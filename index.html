@@ -3,112 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Delirius Store - Tienda Virtual</title>
+    <title>Delirius (神志不清)</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Header -->
+    <!-- Header Minimalista -->
     <header>
         <div class="container header-content">
             <div class="logo">
-                <h1>DELIRIUS</h1>
+                <h1>Delirius <span class="chinese">(神志不清)</span></h1>
             </div>
             <nav class="nav-menu">
                 <a href="#inicio">Inicio</a>
                 <a href="#productos">Productos</a>
-                <a href="#categorias">Categorías</a>
-                <a href="#ofertas">Ofertas</a>
+                <a href="#api">API</a>
+                <a href="#docs">Documentación</a>
                 <a href="#contacto">Contacto</a>
             </nav>
             <div class="header-icons">
-                <a href="#buscar"><i class="fas fa-search"></i></a>
                 <a href="#carrito"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></a>
-                <a href="#usuario"><i class="fas fa-user"></i></a>
             </div>
         </div>
     </header>
 
-    <!-- Hero/Banner Section -->
+    <!-- Hero Section Estilo Delirius -->
     <section class="hero" id="inicio">
-        <div class="hero-content">
-            <h2>Bienvenido a Delirius Store</h2>
-            <p>Descubre los mejores productos con estilo único</p>
-            <a href="#productos" class="btn">Ver Colección</a>
-        </div>
-    </section>
-
-    <!-- Categorías -->
-    <section class="categories" id="categorias">
-        <div class="container">
-            <h2>Categorías Populares</h2>
-            <div class="categories-grid">
-                <div class="category-card">
-                    <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Ropa">
-                    <h3>Ropa</h3>
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h2>WELCOME TO</h2>
+                <h1>The APIs and tools behind delirius</h1>
+                <p>In this section, you'll find a list of my projects, APIs, CDNs, documentation, and more all of which you can freely use in your own implementations or integrate into your projects.</p>
+                <div class="hero-buttons">
+                    <a href="#productos" class="btn btn-primary">Explorar Productos</a>
+                    <a href="#api" class="btn btn-secondary">Ver APIs</a>
                 </div>
-                <div class="category-card">
-                    <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Accesorios">
-                    <h3>Accesorios</h3>
-                </div>
-                <div class="category-card">
-                    <img src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Tecnología">
-                    <h3>Tecnología</h3>
-                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Delirius Products">
             </div>
         </div>
     </section>
 
-    <!-- Productos Destacados -->
-    <main class="container">
-        <section class="products" id="productos">
-            <h2>Productos Destacados</h2>
+    <!-- Sección de Productos -->
+    <section class="products-section" id="productos">
+        <div class="container">
+            <h2>Featured Products</h2>
             <div class="product-grid" id="product-grid">
                 <!-- Los productos se cargarán aquí con JavaScript -->
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Ofertas Especiales -->
-        <section class="offers" id="ofertas">
-            <h2>Ofertas Especiales</h2>
-            <div class="offer-banner">
-                <h3>¡Hasta 50% OFF en productos seleccionados!</h3>
-                <p>Aprovecha estas ofertas por tiempo limitado</p>
-                <a href="#productos" class="btn">Ver Ofertas</a>
+    <!-- Sección API -->
+    <section class="api-section" id="api">
+        <div class="container">
+            <div class="section-header">
+                <h2>API Services</h2>
+                <p>My focus is on building tools that are both practical and accessible</p>
             </div>
-        </section>
-    </main>
+            <div class="api-grid">
+                <div class="api-card">
+                    <i class="fas fa-code api-icon"></i>
+                    <h3>Public APIs</h3>
+                    <p>Ready for integration into your projects</p>
+                </div>
+                <div class="api-card">
+                    <i class="fas fa-bolt api-icon"></i>
+                    <h3>CDN Services</h3>
+                    <p>Fast and reliable media delivery</p>
+                </div>
+                <div class="api-card">
+                    <i class="fas fa-book api-icon"></i>
+                    <h3>Documentation</h3>
+                    <p>Simplified onboarding for developers</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer id="contacto">
         <div class="container footer-content">
             <div class="footer-section">
-                <h3>DELIRIUS STORE</h3>
-                <p>La mejor selección de productos con estilo</p>
+                <h3>Delirius <span class="chinese">(神志不清)</span></h3>
+                <p>Building practical and accessible tools for developers</p>
             </div>
             <div class="footer-section">
-                <h4>Enlaces Rápidos</h4>
-                <a href="#inicio">Inicio</a>
-                <a href="#productos">Productos</a>
-                <a href="#categorias">Categorías</a>
-                <a href="#ofertas">Ofertas</a>
+                <h4>Resources</h4>
+                <a href="#api">APIs</a>
+                <a href="#docs">Documentation</a>
+                <a href="#products">Products</a>
+                <a href="#cdn">CDN</a>
             </div>
             <div class="footer-section">
-                <h4>Contacto</h4>
-                <p><i class="fas fa-envelope"></i> info@delirius.store</p>
-                <p><i class="fas fa-phone"></i> +1 234 567 890</p>
-            </div>
-            <div class="footer-section">
-                <h4>Síguenos</h4>
+                <h4>Connect</h4>
                 <div class="social-icons">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-discord"></i></a>
                 </div>
             </div>
         </div>
         <div class="copyright">
-            <p>&copy; 2023 Delirius Store. Todos los derechos reservados.</p>
+            <p>© 2023 Delirius. All rights reserved. <a href="#learn-more">Learn more about me →</a></p>
         </div>
     </footer>
 
