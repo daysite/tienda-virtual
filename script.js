@@ -1,61 +1,61 @@
-// Datos de productos de ejemplo
+// Datos de productos de ejemplo (estilo Delirius)
 const productos = [
     {
         id: 1,
-        nombre: "Auriculares Bluetooth",
-        precio: 59.99,
-        precioOriginal: 79.99,
-        imagen: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-        descripcion: "Auriculares inalámbricos con cancelación de ruido",
-        categoria: "audio",
+        nombre: "Hoodie Delirius Exclusive",
+        precio: 49.99,
+        precioOriginal: 69.99,
+        imagen: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+        descripcion: "Hoodie premium con diseño exclusivo",
+        categoria: "ropa",
         enOferta: true
     },
     {
         id: 2,
-        nombre: "Smartwatch Deportivo",
-        precio: 89.99,
-        precioOriginal: 119.99,
-        imagen: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-        descripcion: "Reloj inteligente con monitor de actividad y sueño",
-        categoria: "wearables",
+        nombre: "Gorro Streetwear",
+        precio: 24.99,
+        precioOriginal: 34.99,
+        imagen: "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+        descripcion: "Gorro de alta calidad con logo bordado",
+        categoria: "accesorios",
         enOferta: true
     },
     {
         id: 3,
-        nombre: "Cámara DSLR Profesional",
-        precio: 699.99,
-        imagen: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-        descripcion: "Cámara réflex digital con lente 18-55mm",
-        categoria: "fotografia",
+        nombre: "Zapatillas Urbanas",
+        precio: 89.99,
+        imagen: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+        descripcion: "Zapatillas cómodas para el día a día",
+        categoria: "calzado",
         enOferta: false
     },
     {
         id: 4,
-        nombre: "Altavoz Inteligente",
-        precio: 49.99,
-        precioOriginal: 69.99,
-        imagen: "https://images.unsplash.com/photo-1589003077984-894e133dabab?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-        descripcion: "Altavoz con asistente virtual integrado",
-        categoria: "audio",
+        nombre: "Mochila Delirius",
+        precio: 59.99,
+        precioOriginal: 79.99,
+        imagen: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+        descripcion: "Mochila resistente con múltiples compartimentos",
+        categoria: "accesorios",
         enOferta: true
     },
     {
         id: 5,
-        nombre: "Teclado Mecánico Gaming",
-        precio: 79.99,
-        imagen: "https://images.unsplash.com/photo-1541140532154-b024d705b90a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-        descripcion: "Teclado mecánico RGB para gamers",
-        categoria: "computacion",
+        nombre: "Camiseta Premium",
+        precio: 34.99,
+        imagen: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+        descripcion: "Camiseta de algodón 100% de alta calidad",
+        categoria: "ropa",
         enOferta: false
     },
     {
         id: 6,
-        nombre: "Monitor 4K Ultra HD",
-        precio: 299.99,
-        precioOriginal: 399.99,
-        imagen: "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-        descripcion: "Monitor de 27 pulgadas con resolución 4K",
-        categoria: "computacion",
+        nombre: "Gafas de Sol",
+        precio: 45.99,
+        precioOriginal: 65.99,
+        imagen: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+        descripcion: "Gafas con protección UV y diseño moderno",
+        categoria: "accesorios",
         enOferta: true
     }
 ];
@@ -102,7 +102,7 @@ function agregarAlCarrito(id) {
     carrito.push(producto);
     
     // Mostrar notificación
-    mostrarNotificacion(`Agregaste: ${producto.nombre}`);
+    mostrarNotificacion(`✅ Agregaste: ${producto.nombre}`);
     
     // Actualizar contador de carrito
     actualizarContadorCarrito();
@@ -120,12 +120,13 @@ function mostrarNotificacion(mensaje) {
         position: fixed;
         bottom: 20px;
         right: 20px;
-        background-color: #2ecc71;
+        background-color: #FF8C00;
         color: white;
         padding: 15px 20px;
         border-radius: 5px;
         z-index: 1000;
         box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        font-weight: 500;
     `;
     
     document.body.appendChild(notificacion);
@@ -138,33 +139,9 @@ function mostrarNotificacion(mensaje) {
 
 // Función para actualizar contador de carrito
 function actualizarContadorCarrito() {
-    const contadorCarrito = document.querySelector('.header-icons a[href="#carrito"]');
-    if (contadorCarrito) {
-        // Crear o actualizar el contador
-        let contador = contadorCarrito.querySelector('.contador');
-        if (!contador) {
-            contador = document.createElement('span');
-            contador.classList.add('contador');
-            contadorCarrito.appendChild(contador);
-        }
-        contador.textContent = carrito.length;
-        
-        // Estilos del contador
-        contador.style.cssText = `
-            position: absolute;
-            top: -8px;
-            right: -8px;
-            background-color: #e74c3c;
-            color: white;
-            border-radius: 50%;
-            width: 20px;
-            height: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.8rem;
-            font-weight: bold;
-        `;
+    const cartCount = document.querySelector('.cart-count');
+    if (cartCount) {
+        cartCount.textContent = carrito.length;
     }
 }
 
