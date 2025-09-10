@@ -44,17 +44,18 @@
             z-index: -2;
         }
 
-        /* Sección principal con video y texto */
+        /* Sección principal con video y texto - ÁREA ESPECÍFICA */
         .main-hero {
             position: relative;
-            height: 100vh;
+            height: 70vh; /* Altura específica como en la imagen */
             display: flex;
             align-items: center;
-            justify-content: center;
             overflow: hidden;
+            margin: 80px 40px 40px 40px; /* Margen exacto */
+            border-radius: 16px; /* Bordes redondeados */
         }
 
-        /* Video destacado */
+        /* Video destacado - MUCHO MÁS VISIBLE */
         .featured-video {
             position: absolute;
             top: 0;
@@ -68,7 +69,8 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            opacity: 0.7; /* Más visible */
+            opacity: 0.9; /* MUCHO más visible */
+            filter: brightness(1.1) contrast(1.2); /* Mejorar visibilidad */
         }
 
         .video-overlay {
@@ -77,23 +79,22 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to bottom, rgba(10, 10, 10, 0.7) 0%, rgba(10, 10, 10, 0.8) 100%);
+            background: linear-gradient(45deg, rgba(10, 10, 10, 0.4) 0%, rgba(10, 10, 10, 0.6) 100%);
+            border-radius: 16px;
         }
 
-        /* Contenido de texto superpuesto - TAMAÑO Y POSICIÓN EXACTA como en la imagen */
+        /* Contenido de texto superpuesto - TEXTO EXACTO como en la imagen */
         .video-content {
-            text-align: left; /* Alineación izquierda como en la imagen */
+            text-align: left;
             max-width: 800px;
-            padding: 0 40px;
+            padding: 60px;
             z-index: 2;
-            margin-top: -120px; /* Ajuste fino de posición vertical */
-            margin-left: 0; /* Alineado a la izquierda */
         }
 
         .logo-text {
-            font-size: 18px; /* Tamaño más pequeño como en la imagen */
+            font-size: 24px;
             font-weight: 700;
-            margin-bottom: 40px; /* Espaciado exacto */
+            margin-bottom: 15px;
             display: flex;
             align-items: center;
             background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
@@ -103,35 +104,47 @@
         }
 
         .chinese {
-            font-size: 12px; /* Tamaño más pequeño */
+            font-size: 14px;
             margin-left: 8px;
             opacity: 0.8;
             font-weight: 400;
         }
 
-        .welcome-text {
-            font-size: 14px; /* Tamaño más pequeño como en la imagen */
+        .delirius-title {
+            font-size: 20px;
+            font-weight: 600;
             color: var(--secondary-color);
-            margin-bottom: 15px; /* Espaciado exacto */
+            margin-bottom: 10px;
+        }
+
+        .welcome-text {
+            font-size: 14px;
+            color: var(--secondary-color);
+            margin-bottom: 5px;
             font-weight: 500;
-            letter-spacing: 2px; /* Más espaciado como en la imagen */
+            letter-spacing: 2px;
             text-transform: uppercase;
         }
 
         .main-title {
-            font-size: 32px; /* Tamaño más pequeño como en la imagen */
+            font-size: 36px;
             font-weight: 700;
-            margin-bottom: 25px; /* Espaciado exacto */
+            margin-bottom: 20px;
             line-height: 1.2;
             color: var(--text-color);
         }
 
         .description {
-            font-size: 16px; /* Tamaño más pequeño como en la imagen */
+            font-size: 16px;
             color: var(--secondary-color);
-            line-height: 1.6; /* Interlineado más compacto */
-            margin-bottom: 25px;
+            line-height: 1.6;
+            margin-bottom: 20px;
             max-width: 700px;
+        }
+
+        .description strong {
+            color: var(--text-color);
+            font-weight: 600;
         }
 
         .learn-more {
@@ -174,7 +187,7 @@
         }
 
         .logo {
-            font-size: 18px; /* Tamaño más pequeño */
+            font-size: 18px;
             font-weight: 700;
             display: flex;
             align-items: center;
@@ -185,7 +198,7 @@
         }
 
         .header-chinese {
-            font-size: 11px; /* Tamaño más pequeño */
+            font-size: 11px;
             margin-left: 6px;
             opacity: 0.8;
             font-weight: 400;
@@ -195,7 +208,7 @@
         .header-right {
             display: flex;
             align-items: center;
-            gap: 12px; /* Espaciado más pequeño */
+            gap: 12px;
         }
 
         /* Selector de tema - Estilo Delirius EXACTO (más pequeño) */
@@ -203,15 +216,15 @@
             display: flex;
             background-color: var(--card-bg);
             padding: 2px;
-            border-radius: 18px; /* Más pequeño */
+            border-radius: 18px;
             border: 1px solid var(--border-color);
         }
 
         .theme-option {
-            padding: 5px 10px; /* Más pequeño */
-            border-radius: 14px; /* Más pequeño */
+            padding: 5px 10px;
+            border-radius: 14px;
             cursor: pointer;
-            font-size: 11px; /* Tamaño más pequeño */
+            font-size: 11px;
             font-weight: 600;
             transition: all 0.3s ease;
             color: var(--text-color);
@@ -227,18 +240,18 @@
             background: none;
             border: none;
             cursor: pointer;
-            padding: 6px; /* Más pequeño */
+            padding: 6px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             gap: 3px;
-            width: 28px; /* Más pequeño */
-            height: 28px; /* Más pequeño */
+            width: 28px;
+            height: 28px;
         }
 
         .menu-bar {
-            width: 16px; /* Más pequeño */
+            width: 16px;
             height: 2px;
             background-color: var(--text-color);
             border-radius: 1px;
@@ -252,17 +265,17 @@
         /* Menú desplegable */
         .dropdown-menu {
             position: fixed;
-            top: 50px; /* Más pequeño */
+            top: 50px;
             right: 40px;
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 10px; /* Más pequeño */
-            padding: 12px; /* Más pequeño */
+            border-radius: 10px;
+            padding: 12px;
             z-index: 1000;
             display: none;
             flex-direction: column;
-            gap: 8px; /* Más pequeño */
-            min-width: 160px; /* Más pequeño */
+            gap: 8px;
+            min-width: 160px;
             backdrop-filter: blur(10px);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
@@ -274,10 +287,10 @@
         .dropdown-menu a {
             color: var(--text-color);
             text-decoration: none;
-            padding: 8px 12px; /* Más pequeño */
-            border-radius: 6px; /* Más pequeño */
+            padding: 8px 12px;
+            border-radius: 6px;
             transition: all 0.3s ease;
-            font-size: 12px; /* Más pequeño */
+            font-size: 12px;
             font-weight: 500;
         }
 
@@ -288,73 +301,73 @@
 
         /* Products Section */
         .products-section {
-            padding: 80px 40px;
+            padding: 60px 40px;
             position: relative;
             z-index: 2;
             background-color: var(--bg-color);
         }
 
         .section-title {
-            font-size: 14px; /* Más pequeño */
+            font-size: 14px;
             font-weight: 600;
-            margin-bottom: 40px; /* Espaciado más pequeño */
+            margin-bottom: 40px;
             text-transform: uppercase;
-            letter-spacing: 1.2px; /* Más pequeño */
+            letter-spacing: 1.2px;
             color: var(--secondary-color);
             text-align: center;
         }
 
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Más pequeño */
-            gap: 25px; /* Espaciado más pequeño */
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
         }
 
         .product-card {
             background-color: var(--card-bg);
-            border-radius: 10px; /* Más pequeño */
-            padding: 20px; /* Más pequeño */
+            border-radius: 10px;
+            padding: 20px;
             transition: all 0.3s ease;
             border: 1px solid var(--border-color);
         }
 
         .product-card:hover {
-            transform: translateY(-4px); /* Efecto más sutil */
+            transform: translateY(-4px);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
         }
 
         .product-card h3 {
-            font-size: 16px; /* Más pequeño */
-            margin-bottom: 12px; /* Espaciado más pequeño */
+            font-size: 16px;
+            margin-bottom: 12px;
             font-weight: 600;
             color: var(--text-color);
         }
 
         .product-card p {
             color: var(--secondary-color);
-            font-size: 13px; /* Más pequeño */
-            margin-bottom: 16px; /* Espaciado más pequeño */
-            line-height: 1.5; /* Más compacto */
+            font-size: 13px;
+            margin-bottom: 16px;
+            line-height: 1.5;
         }
 
         .product-price {
-            font-size: 20px; /* Más pequeño */
+            font-size: 20px;
             font-weight: 700;
             color: var(--accent-color);
-            margin-bottom: 16px; /* Espaciado más pequeño */
+            margin-bottom: 16px;
         }
 
         .product-button {
             width: 100%;
-            padding: 10px; /* Más pequeño */
+            padding: 10px;
             background: transparent;
             color: var(--text-color);
             border: 1px solid var(--border-color);
-            border-radius: 5px; /* Más pequeño */
+            border-radius: 5px;
             cursor: pointer;
             font-weight: 500;
             transition: all 0.3s ease;
-            font-size: 13px; /* Más pequeño */
+            font-size: 13px;
         }
 
         .product-button:hover {
@@ -366,7 +379,7 @@
         .divider {
             height: 1px;
             background-color: var(--border-color);
-            margin: 50px 0; /* Espaciado más pequeño */
+            margin: 50px 0;
             width: 100%;
         }
 
@@ -380,7 +393,7 @@
         }
 
         .light-theme .video-overlay {
-            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.8) 100%);
+            background: linear-gradient(45deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.6) 100%);
         }
 
         .light-theme .theme-option {
@@ -397,9 +410,13 @@
                 padding: 10px 20px;
             }
 
+            .main-hero {
+                margin: 70px 20px 30px 20px;
+                height: 60vh;
+            }
+
             .video-content {
-                padding: 0 20px;
-                margin-top: -80px;
+                padding: 40px;
             }
 
             .main-title {
@@ -407,7 +424,7 @@
             }
 
             .products-section {
-                padding: 60px 20px;
+                padding: 40px 20px;
             }
 
             .dropdown-menu {
@@ -416,6 +433,15 @@
         }
 
         @media (max-width: 600px) {
+            .main-hero {
+                margin: 60px 15px 20px 15px;
+                height: 50vh;
+            }
+
+            .video-content {
+                padding: 30px 20px;
+            }
+
             .main-title {
                 font-size: 24px;
             }
@@ -436,13 +462,13 @@
                 font-size: 12px;
             }
             
-            .video-content {
-                margin-top: -60px;
+            .logo-text {
+                font-size: 20px;
+                margin-bottom: 10px;
             }
             
-            .logo-text {
+            .delirius-title {
                 font-size: 16px;
-                margin-bottom: 30px;
             }
         }
     </style>
@@ -451,7 +477,7 @@
     <!-- Fondo general -->
     <div class="main-background"></div>
     
-    <!-- Sección principal con video y texto -->
+    <!-- Sección principal con video y texto - ÁREA ESPECÍFICA -->
     <div class="main-hero">
         <div class="featured-video">
             <video autoplay muted loop playsinline>
@@ -464,10 +490,11 @@
             <div class="logo-text">
                 Delirius <span class="chinese">(神志不清)</span>
             </div>
+            <div class="delirius-title">Delirius</div>
             <div class="welcome-text">WELCOME TO</div>
             <h1 class="main-title">The APIs and tools behind delirius</h1>
             <p class="description">
-                In this section, you'll find a list of my projects, APIs, CDNs, documentation, and more all of which you can freely use in your own implementations or integrate into your projects. My focus is on building tools that are both practical and accessible: public APIs ready for integration, fast and reliable CDNs for media and assets, and documentation that simplifies onboarding for developers of all levels. 
+                In <strong>"Find a list of powers"</strong>, APIs, CDNs, documentation, and more all of which you can freely use in your own implementations or integrate into your projects. My focus is on building tools that are both practical and accessible: public APIs ready for integration, fast and reliable CDNs for media and assets, and documentation that simplifies onboarding for developers of all levels.
                 <a href="#learn-more" class="learn-more">Learn more about me <span class="learn-more-arrow">→</span></a>
             </p>
         </div>
