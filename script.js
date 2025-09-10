@@ -2,60 +2,60 @@
 const productos = [
     {
         id: 1,
-        nombre: "Hoodie Delirius Exclusive",
-        precio: 49.99,
-        precioOriginal: 69.99,
-        imagen: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-        descripcion: "Hoodie premium con diseño exclusivo",
-        categoria: "ropa",
+        nombre: "Premium API Access",
+        precio: 29.99,
+        precioOriginal: 49.99,
+        imagen: "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+        descripcion: "Full access to all API endpoints with premium support",
+        categoria: "api",
         enOferta: true
     },
     {
         id: 2,
-        nombre: "Gorro Streetwear",
-        precio: 24.99,
-        precioOriginal: 34.99,
-        imagen: "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-        descripcion: "Gorro de alta calidad con logo bordado",
-        categoria: "accesorios",
+        nombre: "CDN Storage Package",
+        precio: 89.99,
+        precioOriginal: 119.99,
+        imagen: "https://images.unsplash.com/photo-1563207153-f403bf289096?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+        descripcion: "500GB CDN storage with global edge locations",
+        categoria: "cdn",
         enOferta: true
     },
     {
         id: 3,
-        nombre: "Zapatillas Urbanas",
-        precio: 89.99,
-        imagen: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-        descripcion: "Zapatillas cómodas para el día a día",
-        categoria: "calzado",
+        nombre: "Developer Documentation",
+        precio: 19.99,
+        imagen: "https://images.unsplash.com/photo-1581276879432-15e50529f34b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+        descripcion: "Comprehensive documentation and code examples",
+        categoria: "docs",
         enOferta: false
     },
     {
         id: 4,
-        nombre: "Mochila Delirius",
-        precio: 59.99,
-        precioOriginal: 79.99,
-        imagen: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-        descripcion: "Mochila resistente con múltiples compartimentos",
-        categoria: "accesorios",
+        nombre: "Webhook Integration",
+        precio: 45.99,
+        precioOriginal: 65.99,
+        imagen: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+        descripcion: "Real-time webhook integration services",
+        categoria: "api",
         enOferta: true
     },
     {
         id: 5,
-        nombre: "Camiseta Premium",
+        nombre: "SSL Certificate",
         precio: 34.99,
-        imagen: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-        descripcion: "Camiseta de algodón 100% de alta calidad",
-        categoria: "ropa",
+        imagen: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+        descripcion: "Secure SSL certificates for your domains",
+        categoria: "security",
         enOferta: false
     },
     {
         id: 6,
-        nombre: "Gafas de Sol",
-        precio: 45.99,
-        precioOriginal: 65.99,
-        imagen: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-        descripcion: "Gafas con protección UV y diseño moderno",
-        categoria: "accesorios",
+        nombre: "Database Storage",
+        precio: 75.99,
+        precioOriginal: 95.99,
+        imagen: "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+        descripcion: "Secure cloud database storage solutions",
+        categoria: "storage",
         enOferta: true
     }
 ];
@@ -79,18 +79,16 @@ function mostrarProductos() {
         
         // Verificar si tiene etiqueta de oferta
         const etiquetaOferta = producto.enOferta 
-            ? '<span class="etiqueta-oferta">OFERTA</span>' 
+            ? '<span class="etiqueta-oferta">SAVE 40%</span>' 
             : '';
         
         productCard.innerHTML = `
             ${etiquetaOferta}
             <img src="${producto.imagen}" alt="${producto.nombre}">
-            <div class="product-card-content">
-                <h3>${producto.nombre}</h3>
-                <p class="descripcion">${producto.descripcion}</p>
-                ${precioHTML}
-                <button onclick="agregarAlCarrito(${producto.id})">Agregar al carrito</button>
-            </div>
+            <h3>${producto.nombre}</h3>
+            <p class="descripcion">${producto.descripcion}</p>
+            ${precioHTML}
+            <button onclick="agregarAlCarrito(${producto.id})">Add to Cart</button>
         `;
         productGrid.appendChild(productCard);
     });
@@ -102,13 +100,12 @@ function agregarAlCarrito(id) {
     carrito.push(producto);
     
     // Mostrar notificación
-    mostrarNotificacion(`✅ Agregaste: ${producto.nombre}`);
+    mostrarNotificacion(`✅ Added to cart: ${producto.nombre}`);
     
     // Actualizar contador de carrito
     actualizarContadorCarrito();
     
     console.log('Producto agregado al carrito:', producto);
-    console.log('Carrito actual:', carrito);
 }
 
 // Función para mostrar notificación
@@ -120,12 +117,12 @@ function mostrarNotificacion(mensaje) {
         position: fixed;
         bottom: 20px;
         right: 20px;
-        background-color: #FF8C00;
+        background-color: #48bb78;
         color: white;
-        padding: 15px 20px;
-        border-radius: 5px;
+        padding: 12px 20px;
+        border-radius: 6px;
         z-index: 1000;
-        box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         font-weight: 500;
     `;
     
