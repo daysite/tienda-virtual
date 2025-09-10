@@ -3,60 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Delirius (神志不清)</title>
+    <title>Delirius Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-6.4.0/css/all.min.css">
     <style>
+        /* Estilos base - Réplica exacta de Delirius.store */
         :root {
-            --bg-primary: #ffffff;
-            --bg-secondary: #f8fafc;
-            --text-primary: #1a202c;
-            --text-secondary: #4a5568;
-            --accent-color: #667eea;
-            --border-color: #e2e8f0;
-            --card-bg: #ffffff;
-            --shadow: 0 1px 3px rgba(0,0,0,0.1);
-        }
-
-        .dark-mode {
-            --bg-primary: #1a202c;
-            --bg-secondary: #2d3748;
-            --text-primary: #f7fafc;
-            --text-secondary: #cbd5e0;
-            --accent-color: #7c93e6;
-            --border-color: #4a5568;
-            --card-bg: #2d3748;
-            --shadow: 0 1px 3px rgba(0,0,0,0.3);
+            --bg-color: #0a0a0a;
+            --text-color: #ffffff;
+            --accent-color: #3b82f6;
+            --secondary-color: #6b7280;
+            --card-bg: #111827;
+            --border-color: #1f2937;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            transition: background-color 0.3s, color 0.3s;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
         }
 
         body {
-            font-family: 'Inter', 'Arial', sans-serif;
-            background-color: var(--bg-primary);
-            color: var(--text-primary);
+            background-color: var(--bg-color);
+            color: var(--text-color);
             line-height: 1.6;
             font-size: 14px;
+            overflow-x: hidden;
         }
 
         .container {
             max-width: 1000px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 15px;
         }
 
-        /* Header */
+        /* Header - Estilo Delirius exacto */
         header {
-            background-color: var(--bg-primary);
-            padding: 1rem 0;
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border-color);
             position: sticky;
             top: 0;
+            background-color: var(--bg-color);
             z-index: 1000;
-            box-shadow: var(--shadow);
-            border-bottom: 1px solid var(--border-color);
         }
 
         .header-content {
@@ -65,192 +53,193 @@
             align-items: center;
         }
 
-        .logo h1 {
-            font-size: 1.5rem;
+        .logo {
+            font-size: 22px;
             font-weight: 700;
-            color: var(--text-primary);
+            display: flex;
+            align-items: center;
         }
 
         .chinese {
-            font-weight: 400;
-            opacity: 0.7;
+            font-size: 14px;
+            margin-left: 5px;
+            opacity: 0.8;
         }
 
         .nav-menu {
             display: flex;
-            gap: 1.5rem;
+            gap: 25px;
         }
 
         .nav-menu a {
-            color: var(--text-secondary);
+            color: var(--text-color);
             text-decoration: none;
+            font-size: 13px;
             font-weight: 500;
-            font-size: 0.9rem;
-            transition: color 0.3s ease;
             text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: color 0.2s;
         }
 
         .nav-menu a:hover {
             color: var(--accent-color);
         }
 
-        .header-right {
+        .header-actions {
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 15px;
         }
 
         .theme-toggle {
             background: none;
             border: none;
-            color: var(--text-secondary);
+            color: var(--text-color);
             cursor: pointer;
-            font-size: 1.1rem;
-            display: flex;
-            align-items: center;
+            font-size: 16px;
         }
 
-        /* Hero Section */
+        /* Hero Section - Réplica exacta */
         .hero {
-            padding: 3rem 0;
-            background-color: var(--bg-primary);
-        }
-
-        .hero-content {
+            padding: 60px 0;
             text-align: center;
-            max-width: 700px;
-            margin: 0 auto;
         }
 
         .hero-welcome {
-            font-size: 0.9rem;
-            font-weight: 600;
+            font-size: 12px;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 1rem;
+            letter-spacing: 2px;
             color: var(--accent-color);
+            margin-bottom: 15px;
+            font-weight: 600;
         }
 
         .hero-title {
-            font-size: 1.8rem;
+            font-size: 32px;
             font-weight: 700;
-            line-height: 1.3;
-            margin-bottom: 1.5rem;
-            color: var(--text-primary);
+            margin-bottom: 20px;
+            line-height: 1.2;
         }
 
         .hero-description {
-            font-size: 1rem;
-            color: var(--text-secondary);
+            font-size: 16px;
+            color: var(--secondary-color);
+            max-width: 700px;
+            margin: 0 auto 30px;
             line-height: 1.6;
-            margin-bottom: 2rem;
         }
 
-        .hero-learn-more {
-            color: var(--accent-color);
+        .hero-cta {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: var(--accent-color);
+            color: white;
             text-decoration: none;
+            border-radius: 5px;
             font-weight: 500;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.3rem;
+            transition: background-color 0.2s;
         }
 
-        .hero-learn-more:hover {
-            text-decoration: underline;
+        .hero-cta:hover {
+            background-color: #2563eb;
         }
 
         /* Products Section */
         .products-section {
-            padding: 3rem 0;
-            background-color: var(--bg-secondary);
+            padding: 50px 0;
         }
 
         .section-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 2rem;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 30px;
             text-align: center;
-            color: var(--text-primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
         }
 
         .product-card {
-            background: var(--card-bg);
+            background-color: var(--card-bg);
             border-radius: 8px;
-            padding: 1.2rem;
-            box-shadow: var(--shadow);
+            padding: 20px;
+            transition: transform 0.2s;
             border: 1px solid var(--border-color);
         }
 
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
         .product-card h3 {
-            font-size: 1.1rem;
+            font-size: 16px;
+            margin-bottom: 10px;
             font-weight: 600;
-            margin-bottom: 0.8rem;
-            color: var(--text-primary);
         }
 
         .product-card p {
-            color: var(--text-secondary);
-            margin-bottom: 1rem;
-            font-size: 0.9rem;
+            color: var(--secondary-color);
+            font-size: 13px;
+            margin-bottom: 15px;
             line-height: 1.5;
         }
 
-        .product-card .price {
-            font-size: 1.1rem;
+        .product-price {
+            font-size: 18px;
             font-weight: 700;
             color: var(--accent-color);
-            margin-bottom: 1rem;
+            margin-bottom: 15px;
         }
 
-        .product-card button {
+        .product-button {
             width: 100%;
-            padding: 0.6rem;
-            background-color: var(--accent-color);
-            color: white;
-            border: none;
+            padding: 10px;
+            background-color: transparent;
+            color: var(--text-color);
+            border: 1px solid var(--border-color);
             border-radius: 5px;
-            font-weight: 500;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            font-weight: 500;
+            transition: background-color 0.2s;
         }
 
-        .product-card button:hover {
-            background-color: #5a67d8;
+        .product-button:hover {
+            background-color: var(--accent-color);
         }
 
         /* Footer */
         footer {
-            background-color: var(--bg-primary);
-            padding: 2rem 0;
+            padding: 40px 0;
             border-top: 1px solid var(--border-color);
+            margin-top: 50px;
         }
 
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
+            gap: 30px;
         }
 
         .footer-section h4 {
-            font-size: 1rem;
+            font-size: 14px;
             font-weight: 600;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .footer-section a {
-            color: var(--text-secondary);
-            text-decoration: none;
             display: block;
-            margin-bottom: 0.5rem;
-            font-size: 0.9rem;
-            transition: color 0.3s ease;
+            color: var(--secondary-color);
+            text-decoration: none;
+            margin-bottom: 8px;
+            font-size: 13px;
+            transition: color 0.2s;
         }
 
         .footer-section a:hover {
@@ -259,28 +248,37 @@
 
         .copyright {
             text-align: center;
-            margin-top: 2rem;
-            padding-top: 1.5rem;
+            margin-top: 40px;
+            padding-top: 20px;
             border-top: 1px solid var(--border-color);
-            color: var(--text-secondary);
-            font-size: 0.85rem;
+            color: var(--secondary-color);
+            font-size: 12px;
+        }
+
+        /* Tema claro */
+        .light-theme {
+            --bg-color: #ffffff;
+            --text-color: #111827;
+            --secondary-color: #6b7280;
+            --card-bg: #f9fafb;
+            --border-color: #e5e7eb;
         }
 
         /* Responsive */
         @media (max-width: 768px) {
             .header-content {
                 flex-direction: column;
-                gap: 1rem;
+                gap: 15px;
             }
             
             .nav-menu {
-                gap: 1rem;
+                gap: 15px;
                 flex-wrap: wrap;
                 justify-content: center;
             }
             
             .hero-title {
-                font-size: 1.5rem;
+                font-size: 24px;
             }
             
             .product-grid {
@@ -299,16 +297,16 @@
     <header>
         <div class="container header-content">
             <div class="logo">
-                <h1>Delirius <span class="chinese">(神志不清)</span></h1>
+                Delirius <span class="chinese">(神志不清)</span>
             </div>
             <nav class="nav-menu">
-                <a href="#inicio">INICIO</a>
-                <a href="#productos">PRODUCTOS</a>
+                <a href="#inicio">Inicio</a>
+                <a href="#productos">Productos</a>
                 <a href="#api">API</a>
-                <a href="#documentacion">DOCUMENTACIÓN</a>
-                <a href="#contacto">CONTACTO</a>
+                <a href="#documentacion">Documentación</a>
+                <a href="#contacto">Contacto</a>
             </nav>
-            <div class="header-right">
+            <div class="header-actions">
                 <button class="theme-toggle" id="themeToggle">🌙</button>
             </div>
         </div>
@@ -316,38 +314,38 @@
 
     <!-- Hero Section -->
     <section class="hero" id="inicio">
-        <div class="container hero-content">
+        <div class="container">
             <div class="hero-welcome">WELCOME TO</div>
-            <h2 class="hero-title">The APIs and tools behind delirius</h2>
+            <h1 class="hero-title">The APIs and tools behind delirius</h1>
             <p class="hero-description">
-                In this section, you'll find a list of my projects, APIs, CDNs, documentation, and more all of which you can freely use in your own implementations or integrate into your projects. My focus is on building tools that are both practical and accessible: public APIs ready for integration, fast and reliable CDNs for media and assets, and documentation that simplifies onboarding for developers of all levels. 
-                <a href="#learn-more" class="hero-learn-more">Learn more about me →</a>
+                In this section, you'll find a list of my projects, APIs, CDNs, documentation, and more all of which you can freely use in your own implementations or integrate into your projects.
             </p>
+            <a href="#productos" class="hero-cta">Explore Products</a>
         </div>
     </section>
 
     <!-- Products Section -->
     <section class="products-section" id="productos">
         <div class="container">
-            <h3 class="section-title">Featured Products</h3>
+            <h2 class="section-title">Featured Products</h2>
             <div class="product-grid">
                 <div class="product-card">
-                    <h3>Premium API Access</h3>
-                    <p>Full access to all API endpoints with premium support and increased rate limits.</p>
-                    <div class="price">$29.99/mo</div>
-                    <button>Add to Cart</button>
+                    <h3>API Access</h3>
+                    <p>Complete API access with documentation and support for all your integration needs.</p>
+                    <div class="product-price">$29.99/mo</div>
+                    <button class="product-button">Add to Cart</button>
                 </div>
                 <div class="product-card">
-                    <h3>CDN Storage</h3>
-                    <p>High-performance content delivery network with global edge locations.</p>
-                    <div class="price">$49.99/mo</div>
-                    <button>Add to Cart</button>
+                    <h3>CDN Network</h3>
+                    <p>Global content delivery network with edge locations for fast media delivery.</p>
+                    <div class="product-price">$49.99/mo</div>
+                    <button class="product-button">Add to Cart</button>
                 </div>
                 <div class="product-card">
-                    <h3>Documentation</h3>
-                    <p>Comprehensive documentation with code examples and integration guides.</p>
-                    <div class="price">$19.99/mo</div>
-                    <button>Add to Cart</button>
+                    <h3>Storage Solution</h3>
+                    <p>Secure cloud storage with high availability and redundancy for your data.</p>
+                    <div class="product-price">$19.99/mo</div>
+                    <button class="product-button">Add to Cart</button>
                 </div>
             </div>
         </div>
@@ -358,28 +356,29 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h4>Delirius</h4>
+                    <h4>Products</h4>
+                    <a href="#api">API</a>
+                    <a href="#cdn">CDN</a>
+                    <a href="#storage">Storage</a>
+                    <a href="#docs">Documentation</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
                     <a href="#about">About</a>
-                    <a href="#services">Services</a>
                     <a href="#careers">Careers</a>
+                    <a href="#contact">Contact</a>
                 </div>
                 <div class="footer-section">
                     <h4>Resources</h4>
-                    <a href="#api">API</a>
-                    <a href="#documentation">Documentation</a>
+                    <a href="#docs">Documentation</a>
                     <a href="#tutorials">Tutorials</a>
+                    <a href="#blog">Blog</a>
                 </div>
                 <div class="footer-section">
-                    <h4>Support</h4>
-                    <a href="#help">Help Center</a>
-                    <a href="#contact">Contact Us</a>
-                    <a href="#status">Status</a>
-                </div>
-                <div class="footer-section">
-                    <h4>Connect</h4>
-                    <a href="#twitter">Twitter</a>
-                    <a href="#github">GitHub</a>
-                    <a href="#linkedin">LinkedIn</a>
+                    <h4>Legal</h4>
+                    <a href="#privacy">Privacy</a>
+                    <a href="#terms">Terms</a>
+                    <a href="#cookies">Cookies</a>
                 </div>
             </div>
             <div class="copyright">
@@ -394,19 +393,20 @@
         const body = document.body;
         
         // Verificar preferencia del usuario
-        if (localStorage.getItem('theme') === 'dark') {
-            body.classList.add('dark-mode');
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            body.classList.add('light-theme');
             themeToggle.textContent = '☀️';
         }
         
         themeToggle.addEventListener('click', () => {
-            body.classList.toggle('dark-mode');
+            body.classList.toggle('light-theme');
             
-            if (body.classList.contains('dark-mode')) {
-                localStorage.setItem('theme', 'dark');
+            if (body.classList.contains('light-theme')) {
+                localStorage.setItem('theme', 'light');
                 themeToggle.textContent = '☀️';
             } else {
-                localStorage.setItem('theme', 'light');
+                localStorage.setItem('theme', 'dark');
                 themeToggle.textContent = '🌙';
             }
         });
