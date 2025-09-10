@@ -12,17 +12,18 @@
     <header>
         <div class="container header-content">
             <div class="logo">
-                <h1>Delirius Store</h1>
+                <h1>DELIRIUS</h1>
             </div>
             <nav class="nav-menu">
                 <a href="#inicio">Inicio</a>
                 <a href="#productos">Productos</a>
+                <a href="#categorias">Categorías</a>
                 <a href="#ofertas">Ofertas</a>
                 <a href="#contacto">Contacto</a>
             </nav>
             <div class="header-icons">
                 <a href="#buscar"><i class="fas fa-search"></i></a>
-                <a href="#carrito"><i class="fas fa-shopping-cart"></i></a>
+                <a href="#carrito"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></a>
                 <a href="#usuario"><i class="fas fa-user"></i></a>
             </div>
         </div>
@@ -32,8 +33,29 @@
     <section class="hero" id="inicio">
         <div class="hero-content">
             <h2>Bienvenido a Delirius Store</h2>
-            <p>Descubre productos exclusivos con los mejores precios</p>
-            <a href="#productos" class="btn">Ver Productos</a>
+            <p>Descubre los mejores productos con estilo único</p>
+            <a href="#productos" class="btn">Ver Colección</a>
+        </div>
+    </section>
+
+    <!-- Categorías -->
+    <section class="categories" id="categorias">
+        <div class="container">
+            <h2>Categorías Populares</h2>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Ropa">
+                    <h3>Ropa</h3>
+                </div>
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Accesorios">
+                    <h3>Accesorios</h3>
+                </div>
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Tecnología">
+                    <h3>Tecnología</h3>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -50,8 +72,9 @@
         <section class="offers" id="ofertas">
             <h2>Ofertas Especiales</h2>
             <div class="offer-banner">
-                <h3>¡Descuentos hasta 50% OFF!</h3>
-                <p>Solo por tiempo limitado</p>
+                <h3>¡Hasta 50% OFF en productos seleccionados!</h3>
+                <p>Aprovecha estas ofertas por tiempo limitado</p>
+                <a href="#productos" class="btn">Ver Ofertas</a>
             </div>
         </section>
     </main>
@@ -60,8 +83,15 @@
     <footer id="contacto">
         <div class="container footer-content">
             <div class="footer-section">
-                <h3>Delirius Store</h3>
-                <p>Tu tienda virtual de confianza</p>
+                <h3>DELIRIUS STORE</h3>
+                <p>La mejor selección de productos con estilo</p>
+            </div>
+            <div class="footer-section">
+                <h4>Enlaces Rápidos</h4>
+                <a href="#inicio">Inicio</a>
+                <a href="#productos">Productos</a>
+                <a href="#categorias">Categorías</a>
+                <a href="#ofertas">Ofertas</a>
             </div>
             <div class="footer-section">
                 <h4>Contacto</h4>
@@ -71,9 +101,9 @@
             <div class="footer-section">
                 <h4>Síguenos</h4>
                 <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
                     <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
                 </div>
             </div>
         </div>
