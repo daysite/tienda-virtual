@@ -48,7 +48,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            opacity: 0.15;
+            opacity: 0.2;
         }
 
         .video-overlay {
@@ -57,7 +57,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(45deg, rgba(10, 10, 10, 0.95) 0%, rgba(10, 10, 10, 0.85) 100%);
+            background: linear-gradient(45deg, rgba(10, 10, 10, 0.9) 0%, rgba(10, 10, 10, 0.7) 100%);
         }
 
         /* Header - Réplica EXACTA de Delirius */
@@ -67,12 +67,13 @@
             top: 0;
             left: 0;
             right: 0;
-            background-color: rgba(10, 10, 10, 0.8);
+            background-color: rgba(10, 10, 10, 0.95);
             z-index: 1000;
             display: flex;
             justify-content: space-between;
             align-items: center;
             backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
         }
 
         .logo {
@@ -97,7 +98,7 @@
         .header-right {
             display: flex;
             align-items: center;
-            gap: 25px;
+            gap: 20px;
         }
 
         /* Selector de tema - Estilo Delirius EXACTO */
@@ -116,6 +117,7 @@
             font-size: 13px;
             font-weight: 600;
             transition: all 0.3s ease;
+            color: var(--text-color);
         }
 
         .theme-option.active {
@@ -183,19 +185,16 @@
         .hero {
             padding: 150px 40px 100px;
             text-align: center;
-            max-width: 900px;
+            max-width: 800px;
             margin: 0 auto;
         }
 
         .hero-title {
-            font-size: 48px;
+            font-size: 42px;
             font-weight: 700;
             margin-bottom: 25px;
             line-height: 1.2;
-            background: linear-gradient(135deg, #ffffff, #a1a1aa);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--text-color);
         }
 
         .hero-description {
@@ -220,6 +219,14 @@
             gap: 12px;
         }
 
+        .learn-more-arrow {
+            transition: transform 0.3s ease;
+        }
+
+        .hero-learn-more:hover .learn-more-arrow {
+            transform: translateX(4px);
+        }
+
         /* Products Section */
         .products-section {
             padding: 100px 40px;
@@ -238,76 +245,55 @@
 
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 35px;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
         }
 
         .product-card {
             background-color: var(--card-bg);
-            border-radius: 14px;
-            padding: 30px;
+            border-radius: 12px;
+            padding: 25px;
             transition: all 0.3s ease;
             border: 1px solid var(--border-color);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .product-card:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
-            opacity: 0;
-            transition: opacity 0.3s ease;
         }
 
         .product-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
-        }
-
-        .product-card:hover:before {
-            opacity: 1;
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
 
         .product-card h3 {
-            font-size: 20px;
+            font-size: 18px;
             margin-bottom: 15px;
             font-weight: 600;
-            color: white;
+            color: var(--text-color);
         }
 
         .product-card p {
             color: var(--secondary-color);
-            font-size: 15px;
-            margin-bottom: 25px;
+            font-size: 14px;
+            margin-bottom: 20px;
             line-height: 1.6;
         }
 
         .product-price {
-            font-size: 24px;
+            font-size: 22px;
             font-weight: 700;
-            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 25px;
+            color: var(--accent-color);
+            margin-bottom: 20px;
         }
 
         .product-button {
             width: 100%;
-            padding: 14px;
+            padding: 12px;
             background: transparent;
             color: var(--text-color);
             border: 1px solid var(--border-color);
-            border-radius: 8px;
+            border-radius: 6px;
             cursor: pointer;
-            font-weight: 600;
+            font-weight: 500;
             transition: all 0.3s ease;
-            font-size: 15px;
+            font-size: 14px;
         }
 
         .product-button:hover {
@@ -325,22 +311,11 @@
         }
 
         .light-theme .video-overlay {
-            background: linear-gradient(45deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 100%);
+            background: linear-gradient(45deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%);
         }
 
-        .light-theme .hero-title {
-            background: linear-gradient(135deg, #18181b, #71717a);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .light-theme .product-card {
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-        }
-
-        .light-theme .dropdown-menu {
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        .light-theme .theme-option {
+            color: var(--text-color);
         }
 
         /* Responsive */
@@ -354,17 +329,21 @@
             }
 
             .hero-title {
-                font-size: 36px;
+                font-size: 32px;
             }
 
             .products-section {
                 padding: 80px 20px;
             }
+
+            .dropdown-menu {
+                right: 20px;
+            }
         }
 
         @media (max-width: 600px) {
             .hero-title {
-                font-size: 32px;
+                font-size: 28px;
             }
 
             .hero-description {
@@ -373,20 +352,6 @@
 
             .product-grid {
                 grid-template-columns: 1fr;
-            }
-
-            .theme-selector {
-                display: none;
-            }
-
-            .mobile-theme-selector {
-                display: flex;
-                gap: 10px;
-                margin-top: 15px;
-                padding: 12px;
-                background-color: rgba(99, 102, 241, 0.1);
-                border-radius: 10px;
-                justify-content: center;
             }
         }
     </style>
@@ -427,10 +392,6 @@
         <a href="#blog">Blog</a>
         <a href="#others">Others</a>
         <a href="#api">Api</a>
-        <div class="mobile-theme-selector" style="display: none;">
-            <div class="theme-option active" data-theme="dark">Dark</div>
-            <div class="theme-option" data-theme="light">Light</div>
-        </div>
     </div>
 
     <!-- Hero Section - Texto EXACTO -->
@@ -438,7 +399,7 @@
         <h1 class="hero-title">The APIs and tools behind delirius</h1>
         <p class="hero-description">
             In this section, you'll find a list of my projects, APIs, CDNs, documentation, and more all of which you can freely use in your own implementations or integrate into your projects. My focus is on building tools that are both practical and accessible: public APIs ready for integration, fast and reliable CDNs for media and assets, and documentation that simplifies onboarding for developers of all levels. 
-            <a href="#learn-more" class="hero-learn-more">Learn more about me →</a>
+            <a href="#learn-more" class="hero-learn-more">Learn more about me <span class="learn-more-arrow">→</span></a>
         </p>
     </section>
 
@@ -521,22 +482,6 @@
                 }
             });
         }
-
-        // Mostrar selector de tema en móvil
-        if (window.innerWidth <= 600) {
-            document.querySelector('.mobile-theme-selector').style.display = 'flex';
-            document.querySelector('.theme-selector').style.display = 'none';
-        }
-
-        window.addEventListener('resize', () => {
-            if (window.innerWidth <= 600) {
-                document.querySelector('.mobile-theme-selector').style.display = 'flex';
-                document.querySelector('.theme-selector').style.display = 'none';
-            } else {
-                document.querySelector('.mobile-theme-selector').style.display = 'none';
-                document.querySelector('.theme-selector').style.display = 'flex';
-            }
-        });
     </script>
 </body>
 </html>
