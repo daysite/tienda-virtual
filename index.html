@@ -373,10 +373,10 @@
     </style>
 </head>
 <body>
-    <!-- Video de fondo - Con fuente alternativa en caso de error -->
+    <!-- Video de fondo - Usando el enlace proporcionado -->
     <div class="video-background">
         <video autoplay muted loop playsinline>
-            <source src="https://assets.mixkit.co/videos/preview/mixkit-abstract-digital-waves-9885-large.mp4" type="video/mp4">
+            <source src="https://files.catbox.moe/4fn0vj.mp4" type="video/mp4">
             <!-- Fuente alternativa si el video no carga -->
             <img src="https://images.unsplash.com/photo-1536240478700-b869070f9279?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&h=900&q=80" alt="Background" style="width: 100%; height: 100%; object-fit: cover;">
         </video>
@@ -509,6 +509,15 @@
             if (video) {
                 video.addEventListener('error', function() {
                     console.log('Error cargando el video, mostrando imagen de respaldo');
+                });
+                
+                // Forzar la reproducción del video en dispositivos móviles
+                video.play().catch(function(error) {
+                    console.log('La reproducción automática falló: ', error);
+                    // Intentar reproducir con gesto del usuario
+                    document.body.addEventListener('click', function() {
+                        video.play();
+                    }, { once: true });
                 });
             }
         });
