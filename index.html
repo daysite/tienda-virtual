@@ -3,37 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Tienda Virtual</title>
+    <title>Delirius Store - Tienda Virtual</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <!-- Header -->
     <header>
-        <h1>Mi Tienda Virtual</h1>
-        <nav>
-            <a href="#">Inicio</a>
-            <a href="#">Productos</a>
-            <a href="#">Contacto</a>
-        </nav>
+        <div class="container header-content">
+            <div class="logo">
+                <h1>Delirius Store</h1>
+            </div>
+            <nav class="nav-menu">
+                <a href="#inicio">Inicio</a>
+                <a href="#productos">Productos</a>
+                <a href="#ofertas">Ofertas</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+            <div class="header-icons">
+                <a href="#buscar"><i class="fas fa-search"></i></a>
+                <a href="#carrito"><i class="fas fa-shopping-cart"></i></a>
+                <a href="#usuario"><i class="fas fa-user"></i></a>
+            </div>
+        </div>
     </header>
-    
-    <main>
-        <section class="hero">
-            <h2>Bienvenido a nuestra tienda</h2>
-            <p>Descubre nuestros productos exclusivos</p>
-        </section>
-        
-        <section class="products">
+
+    <!-- Hero/Banner Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h2>Bienvenido a Delirius Store</h2>
+            <p>Descubre productos exclusivos con los mejores precios</p>
+            <a href="#productos" class="btn">Ver Productos</a>
+        </div>
+    </section>
+
+    <!-- Productos Destacados -->
+    <main class="container">
+        <section class="products" id="productos">
             <h2>Productos Destacados</h2>
-            <div class="product-grid">
-                <!-- Los productos se agregarán aquí con JavaScript -->
+            <div class="product-grid" id="product-grid">
+                <!-- Los productos se cargarán aquí con JavaScript -->
+            </div>
+        </section>
+
+        <!-- Ofertas Especiales -->
+        <section class="offers" id="ofertas">
+            <h2>Ofertas Especiales</h2>
+            <div class="offer-banner">
+                <h3>¡Descuentos hasta 50% OFF!</h3>
+                <p>Solo por tiempo limitado</p>
             </div>
         </section>
     </main>
-    
-    <footer>
-        <p>&copy; 2023 Mi Tienda Virtual</p>
+
+    <!-- Footer -->
+    <footer id="contacto">
+        <div class="container footer-content">
+            <div class="footer-section">
+                <h3>Delirius Store</h3>
+                <p>Tu tienda virtual de confianza</p>
+            </div>
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <p><i class="fas fa-envelope"></i> info@delirius.store</p>
+                <p><i class="fas fa-phone"></i> +1 234 567 890</p>
+            </div>
+            <div class="footer-section">
+                <h4>Síguenos</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 Delirius Store. Todos los derechos reservados.</p>
+        </div>
     </footer>
-    
+
     <script src="script.js"></script>
 </body>
 </html>
