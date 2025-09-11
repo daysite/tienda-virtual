@@ -44,18 +44,19 @@
             z-index: -2;
         }
 
-        /* Sección principal con video y texto - ÁREA ESPECÍFICA */
+        /* Sección principal con video y texto - TAMAÑO REDUCIDO */
         .main-hero {
             position: relative;
-            height: 70vh; /* Altura específica como en la imagen */
+            height: 50vh; /* ALTURA REDUCIDA */
             display: flex;
             align-items: center;
+            justify-content: center; /* CENTRADO */
             overflow: hidden;
-            margin: 80px 40px 40px 40px; /* Margen exacto */
-            border-radius: 16px; /* Bordes redondeados */
+            margin: 100px 60px 40px 60px; /* Márgenes ajustados */
+            border-radius: 16px;
         }
 
-        /* Video destacado - MUCHO MÁS VISIBLE */
+        /* Video destacado - TAMAÑO REDUCIDO */
         .featured-video {
             position: absolute;
             top: 0;
@@ -69,8 +70,8 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            opacity: 0.9; /* MUCHO más visible */
-            filter: brightness(1.1) contrast(1.2); /* Mejorar visibilidad */
+            opacity: 0.9;
+            filter: brightness(1.1) contrast(1.2);
         }
 
         .video-overlay {
@@ -83,11 +84,11 @@
             border-radius: 16px;
         }
 
-        /* Contenido de texto superpuesto - TEXTO EXACTO como en la imagen */
+        /* Contenido de texto superpuesto - CENTRADO */
         .video-content {
-            text-align: left;
+            text-align: center; /* TEXTO CENTRADO */
             max-width: 800px;
-            padding: 60px;
+            padding: 40px;
             z-index: 2;
         }
 
@@ -97,6 +98,7 @@
             margin-bottom: 15px;
             display: flex;
             align-items: center;
+            justify-content: center; /* CENTRADO */
             background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -411,12 +413,12 @@
             }
 
             .main-hero {
-                margin: 70px 20px 30px 20px;
-                height: 60vh;
+                margin: 80px 30px 30px 30px;
+                height: 45vh;
             }
 
             .video-content {
-                padding: 40px;
+                padding: 30px;
             }
 
             .main-title {
@@ -434,12 +436,12 @@
 
         @media (max-width: 600px) {
             .main-hero {
-                margin: 60px 15px 20px 15px;
-                height: 50vh;
+                margin: 70px 20px 20px 20px;
+                height: 40vh;
             }
 
             .video-content {
-                padding: 30px 20px;
+                padding: 20px;
             }
 
             .main-title {
@@ -477,7 +479,7 @@
     <!-- Fondo general -->
     <div class="main-background"></div>
     
-    <!-- Sección principal con video y texto - ÁREA ESPECÍFICA -->
+    <!-- Sección principal con video y texto - TAMAÑO REDUCIDO -->
     <div class="main-hero">
         <div class="featured-video">
             <video autoplay muted loop playsinline>
