@@ -111,7 +111,7 @@
 
         /* Sección de contenido DEBAJO del video */
         .content-section {
-            padding: 0 40px 40px 40px;
+            padding: 0 40px 20px 40px; /* Reducido el padding inferior */
             max-width: 1000px;
             margin: 0 auto;
         }
@@ -283,7 +283,7 @@
 
         /* Products Section */
         .products-section {
-            padding: 60px 40px;
+            padding: 20px 40px 60px 40px; /* Reducido el padding superior */
             position: relative;
             z-index: 2;
             background-color: var(--bg-color);
@@ -357,11 +357,11 @@
             border-color: transparent;
         }
 
-        /* Separador como en la imagen */
+        /* Separador como en la imagen - MODIFICADO para reducir espacio */
         .divider {
             height: 1px;
             background-color: var(--border-color);
-            margin: 50px 0;
+            margin: 30px 0; /* Reducido de 50px a 30px */
             width: 100%;
         }
 
@@ -398,7 +398,7 @@
             }
 
             .content-section {
-                padding: 0 20px 30px 20px;
+                padding: 0 20px 20px 20px; /* Reducido el padding inferior */
             }
 
             .main-title {
@@ -410,7 +410,7 @@
             }
 
             .products-section {
-                padding: 40px 20px;
+                padding: 15px 20px 40px 20px; /* Reducido el padding superior */
             }
 
             .dropdown-menu {
@@ -442,6 +442,10 @@
             
             .header-right {
                 gap: 8px;
+            }
+            
+            .divider {
+                margin: 20px 0; /* Aún más reducido en móviles */
             }
         }
     </style>
