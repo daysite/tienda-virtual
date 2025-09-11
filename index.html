@@ -44,19 +44,19 @@
             z-index: -2;
         }
 
-        /* Sección principal con video y texto - TAMAÑO REDUCIDO */
+        /* Sección principal con video - SOLO TEXTO PRINCIPAL DENTRO */
         .main-hero {
             position: relative;
-            height: 50vh; /* ALTURA REDUCIDA */
+            height: 50vh;
             display: flex;
             align-items: center;
-            justify-content: center; /* CENTRADO */
+            justify-content: center;
             overflow: hidden;
-            margin: 100px 60px 40px 60px; /* Márgenes ajustados */
+            margin: 80px 40px 30px 40px;
             border-radius: 16px;
         }
 
-        /* Video destacado - TAMAÑO REDUCIDO */
+        /* Video destacado */
         .featured-video {
             position: absolute;
             top: 0;
@@ -84,64 +84,44 @@
             border-radius: 16px;
         }
 
-        /* Contenido de texto superpuesto - CENTRADO */
+        /* Contenido de texto DENTRO del video - SOLO TÍTULO PRINCIPAL */
         .video-content {
-            text-align: center; /* TEXTO CENTRADO */
+            text-align: center;
             max-width: 800px;
             padding: 40px;
             z-index: 2;
         }
 
-        .logo-text {
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center; /* CENTRADO */
-            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .chinese {
-            font-size: 14px;
-            margin-left: 8px;
-            opacity: 0.8;
-            font-weight: 400;
-        }
-
-        .delirius-title {
-            font-size: 20px;
-            font-weight: 600;
+        .welcome-text {
+            font-size: 16px;
             color: var(--secondary-color);
             margin-bottom: 10px;
-        }
-
-        .welcome-text {
-            font-size: 14px;
-            color: var(--secondary-color);
-            margin-bottom: 5px;
             font-weight: 500;
             letter-spacing: 2px;
             text-transform: uppercase;
         }
 
         .main-title {
-            font-size: 36px;
+            font-size: 38px;
             font-weight: 700;
-            margin-bottom: 20px;
+            margin-bottom: 0;
             line-height: 1.2;
             color: var(--text-color);
         }
 
+        /* Sección de contenido DEBAJO del video */
+        .content-section {
+            padding: 0 40px 40px 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
         .description {
-            font-size: 16px;
+            font-size: 18px;
             color: var(--secondary-color);
-            line-height: 1.6;
-            margin-bottom: 20px;
-            max-width: 700px;
+            line-height: 1.7;
+            margin-bottom: 30px;
+            text-align: left;
         }
 
         .description strong {
@@ -310,66 +290,66 @@
         }
 
         .section-title {
-            font-size: 14px;
+            font-size: 16px;
             font-weight: 600;
             margin-bottom: 40px;
             text-transform: uppercase;
-            letter-spacing: 1.2px;
+            letter-spacing: 1.5px;
             color: var(--secondary-color);
             text-align: center;
         }
 
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
         }
 
         .product-card {
             background-color: var(--card-bg);
-            border-radius: 10px;
-            padding: 20px;
+            border-radius: 12px;
+            padding: 25px;
             transition: all 0.3s ease;
             border: 1px solid var(--border-color);
         }
 
         .product-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
 
         .product-card h3 {
-            font-size: 16px;
-            margin-bottom: 12px;
+            font-size: 18px;
+            margin-bottom: 15px;
             font-weight: 600;
             color: var(--text-color);
         }
 
         .product-card p {
             color: var(--secondary-color);
-            font-size: 13px;
-            margin-bottom: 16px;
-            line-height: 1.5;
+            font-size: 14px;
+            margin-bottom: 20px;
+            line-height: 1.6;
         }
 
         .product-price {
-            font-size: 20px;
+            font-size: 22px;
             font-weight: 700;
             color: var(--accent-color);
-            margin-bottom: 16px;
+            margin-bottom: 20px;
         }
 
         .product-button {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             background: transparent;
             color: var(--text-color);
             border: 1px solid var(--border-color);
-            border-radius: 5px;
+            border-radius: 8px;
             cursor: pointer;
             font-weight: 500;
             transition: all 0.3s ease;
-            font-size: 13px;
+            font-size: 14px;
         }
 
         .product-button:hover {
@@ -413,16 +393,20 @@
             }
 
             .main-hero {
-                margin: 80px 30px 30px 30px;
-                height: 45vh;
+                margin: 70px 20px 20px 20px;
+                height: 40vh;
             }
 
-            .video-content {
-                padding: 30px;
+            .content-section {
+                padding: 0 20px 30px 20px;
             }
 
             .main-title {
-                font-size: 28px;
+                font-size: 32px;
+            }
+
+            .description {
+                font-size: 16px;
             }
 
             .products-section {
@@ -436,20 +420,20 @@
 
         @media (max-width: 600px) {
             .main-hero {
-                margin: 70px 20px 20px 20px;
-                height: 40vh;
-            }
-
-            .video-content {
-                padding: 20px;
+                margin: 60px 15px 15px 15px;
+                height: 35vh;
             }
 
             .main-title {
-                font-size: 24px;
+                font-size: 28px;
+            }
+
+            .welcome-text {
+                font-size: 14px;
             }
 
             .description {
-                font-size: 14px;
+                font-size: 15px;
             }
 
             .product-grid {
@@ -459,19 +443,6 @@
             .header-right {
                 gap: 8px;
             }
-            
-            .welcome-text {
-                font-size: 12px;
-            }
-            
-            .logo-text {
-                font-size: 20px;
-                margin-bottom: 10px;
-            }
-            
-            .delirius-title {
-                font-size: 16px;
-            }
         }
     </style>
 </head>
@@ -479,29 +450,6 @@
     <!-- Fondo general -->
     <div class="main-background"></div>
     
-    <!-- Sección principal con video y texto - TAMAÑO REDUCIDO -->
-    <div class="main-hero">
-        <div class="featured-video">
-            <video autoplay muted loop playsinline>
-                <source src="https://files.catbox.moe/4fn0vj.mp4" type="video/mp4">
-            </video>
-            <div class="video-overlay"></div>
-        </div>
-        
-        <div class="video-content">
-            <div class="logo-text">
-                Delirius <span class="chinese">(神志不清)</span>
-            </div>
-            <div class="delirius-title">Delirius</div>
-            <div class="welcome-text">WELCOME TO</div>
-            <h1 class="main-title">The APIs and tools behind delirius</h1>
-            <p class="description">
-                In <strong>"Find a list of powers"</strong>, APIs, CDNs, documentation, and more all of which you can freely use in your own implementations or integrate into your projects. My focus is on building tools that are both practical and accessible: public APIs ready for integration, fast and reliable CDNs for media and assets, and documentation that simplifies onboarding for developers of all levels.
-                <a href="#learn-more" class="learn-more">Learn more about me <span class="learn-more-arrow">→</span></a>
-            </p>
-        </div>
-    </div>
-
     <!-- Header - Más pequeño como en la referencia -->
     <header>
         <div class="logo">
@@ -532,6 +480,29 @@
         <a href="#others">Others</a>
         <a href="#api">Api</a>
     </div>
+
+    <!-- Sección principal con video - SOLO TEXTO PRINCIPAL DENTRO -->
+    <div class="main-hero">
+        <div class="featured-video">
+            <video autoplay muted loop playsinline>
+                <source src="https://files.catbox.moe/4fn0vj.mp4" type="video/mp4">
+            </video>
+            <div class="video-overlay"></div>
+        </div>
+        
+        <div class="video-content">
+            <div class="welcome-text">WELCOME TO</div>
+            <h1 class="main-title">The APIs and tools behind delirius</h1>
+        </div>
+    </div>
+
+    <!-- Sección de contenido DEBAJO del video -->
+    <section class="content-section">
+        <p class="description">
+            In <strong>"Find a list of powers"</strong>, APIs, CDNs, documentation, and more all of which you can freely use in your own implementations or integrate into your projects. My focus is on building tools that are both practical and accessible: public APIs ready for integration, fast and reliable CDNs for media and assets, and documentation that simplifies onboarding for developers of all levels.
+            <a href="#learn-more" class="learn-more">Learn more about me <span class="learn-more-arrow">→</span></a>
+        </p>
+    </section>
 
     <!-- Products Section -->
     <section class="products-section">
