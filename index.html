@@ -52,7 +52,7 @@
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            margin: 80px 40px 30px 40px;
+            margin: 80px 40px 20px 40px; /* Reducido margen inferior */
             border-radius: 16px;
         }
 
@@ -111,7 +111,7 @@
 
         /* Sección de contenido DEBAJO del video */
         .content-section {
-            padding: 0 40px 20px 40px; /* Reducido el padding inferior */
+            padding: 0 40px 10px 40px; /* Reducido el padding inferior aún más */
             max-width: 1000px;
             margin: 0 auto;
         }
@@ -120,7 +120,7 @@
             font-size: 18px;
             color: var(--secondary-color);
             line-height: 1.7;
-            margin-bottom: 30px;
+            margin-bottom: 20px; /* Reducido margen inferior */
             text-align: left;
         }
 
@@ -283,7 +283,7 @@
 
         /* Products Section */
         .products-section {
-            padding: 20px 40px 60px 40px; /* Reducido el padding superior */
+            padding: 10px 40px 60px 40px; /* Reducido el padding superior aún más */
             position: relative;
             z-index: 2;
             background-color: var(--bg-color);
@@ -292,7 +292,7 @@
         .section-title {
             font-size: 16px;
             font-weight: 600;
-            margin-bottom: 40px;
+            margin-bottom: 30px; /* Reducido margen inferior */
             text-transform: uppercase;
             letter-spacing: 1.5px;
             color: var(--secondary-color);
@@ -357,11 +357,11 @@
             border-color: transparent;
         }
 
-        /* Separador como en la imagen - MODIFICADO para reducir espacio */
+        /* Separador como en la imagen - MÁS REDUCIDO */
         .divider {
             height: 1px;
             background-color: var(--border-color);
-            margin: 30px 0; /* Reducido de 50px a 30px */
+            margin: 20px 0; /* Reducido aún más */
             width: 100%;
         }
 
@@ -393,12 +393,12 @@
             }
 
             .main-hero {
-                margin: 70px 20px 20px 20px;
+                margin: 70px 20px 15px 20px; /* Reducido margen inferior */
                 height: 40vh;
             }
 
             .content-section {
-                padding: 0 20px 20px 20px; /* Reducido el padding inferior */
+                padding: 0 20px 10px 20px; /* Reducido el padding inferior */
             }
 
             .main-title {
@@ -410,17 +410,21 @@
             }
 
             .products-section {
-                padding: 15px 20px 40px 20px; /* Reducido el padding superior */
+                padding: 10px 20px 40px 20px; /* Reducido el padding superior */
             }
 
             .dropdown-menu {
                 right: 20px;
             }
+            
+            .divider {
+                margin: 15px 0; /* Aún más reducido en tablets */
+            }
         }
 
         @media (max-width: 600px) {
             .main-hero {
-                margin: 60px 15px 15px 15px;
+                margin: 60px 15px 10px 15px; /* Reducido margen inferior */
                 height: 35vh;
             }
 
@@ -445,7 +449,11 @@
             }
             
             .divider {
-                margin: 20px 0; /* Aún más reducido en móviles */
+                margin: 10px 0; /* Mínimo espacio en móviles */
+            }
+            
+            .section-title {
+                margin-bottom: 20px; /* Reducido en móviles */
             }
         }
     </style>
