@@ -52,7 +52,7 @@
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            margin: 80px 40px 20px 40px; /* Reducido margen inferior */
+            margin: 80px 40px 10px 40px; /* MARGEN INFERIOR REDUCIDO AL MÍNIMO */
             border-radius: 16px;
         }
 
@@ -111,16 +111,16 @@
 
         /* Sección de contenido DEBAJO del video */
         .content-section {
-            padding: 0 40px 10px 40px; /* Reducido el padding inferior aún más */
+            padding: 0 40px 5px 40px; /* PADDING INFERIOR CASI ELIMINADO */
             max-width: 1000px;
-            margin: 0 auto;
+            margin: -5px auto 0 auto; /* MARGEN NEGATIVO PARA UNIR SECCIONES */
         }
 
         .description {
             font-size: 18px;
             color: var(--secondary-color);
             line-height: 1.7;
-            margin-bottom: 20px; /* Reducido margen inferior */
+            margin-bottom: 15px; /* MARGEN INFERIOR REDUCIDO */
             text-align: left;
         }
 
@@ -281,18 +281,19 @@
             color: var(--accent-color);
         }
 
-        /* Products Section */
+        /* Products Section - UNIENDO CON LA SECCIÓN ANTERIOR */
         .products-section {
-            padding: 10px 40px 60px 40px; /* Reducido el padding superior aún más */
+            padding: 0 40px 60px 40px; /* ELIMINADO PADDING SUPERIOR */
             position: relative;
             z-index: 2;
             background-color: var(--bg-color);
+            margin-top: -10px; /* MARGEN NEGATIVO PARA UNIR SECCIONES */
         }
 
         .section-title {
             font-size: 16px;
             font-weight: 600;
-            margin-bottom: 30px; /* Reducido margen inferior */
+            margin-bottom: 25px; /* MARGEN REDUCIDO */
             text-transform: uppercase;
             letter-spacing: 1.5px;
             color: var(--secondary-color);
@@ -357,11 +358,11 @@
             border-color: transparent;
         }
 
-        /* Separador como en la imagen - MÁS REDUCIDO */
+        /* Separador como en la imagen - ESPACIO MINIMO */
         .divider {
             height: 1px;
             background-color: var(--border-color);
-            margin: 20px 0; /* Reducido aún más */
+            margin: 15px 0; /* ESPACIO MINIMO */
             width: 100%;
         }
 
@@ -393,12 +394,13 @@
             }
 
             .main-hero {
-                margin: 70px 20px 15px 20px; /* Reducido margen inferior */
+                margin: 70px 20px 5px 20px; /* MARGEN INFERIOR MINIMO */
                 height: 40vh;
             }
 
             .content-section {
-                padding: 0 20px 10px 20px; /* Reducido el padding inferior */
+                padding: 0 20px 5px 20px; /* PADDING INFERIOR MINIMO */
+                margin: -5px auto 0 auto; /* MARGEN NEGATIVO */
             }
 
             .main-title {
@@ -410,7 +412,8 @@
             }
 
             .products-section {
-                padding: 10px 20px 40px 20px; /* Reducido el padding superior */
+                padding: 0 20px 40px 20px; /* SIN PADDING SUPERIOR */
+                margin-top: -5px; /* MARGEN NEGATIVO */
             }
 
             .dropdown-menu {
@@ -418,13 +421,13 @@
             }
             
             .divider {
-                margin: 15px 0; /* Aún más reducido en tablets */
+                margin: 10px 0; /* ESPACIO MINIMO */
             }
         }
 
         @media (max-width: 600px) {
             .main-hero {
-                margin: 60px 15px 10px 15px; /* Reducido margen inferior */
+                margin: 60px 15px 0px 15px; /* SIN MARGEN INFERIOR */
                 height: 35vh;
             }
 
@@ -438,6 +441,7 @@
 
             .description {
                 font-size: 15px;
+                margin-bottom: 10px; /* MARGEN REDUCIDO */
             }
 
             .product-grid {
@@ -449,11 +453,19 @@
             }
             
             .divider {
-                margin: 10px 0; /* Mínimo espacio en móviles */
+                margin: 8px 0; /* ESPACIO MINIMO */
             }
             
             .section-title {
-                margin-bottom: 20px; /* Reducido en móviles */
+                margin-bottom: 20px; /* MARGEN REDUCIDO */
+            }
+            
+            .content-section {
+                padding: 0 15px 0px 15px; /* PADDING INFERIOR ELIMINADO */
+            }
+            
+            .products-section {
+                padding: 0 15px 30px 15px; /* PADDING AJUSTADO */
             }
         }
     </style>
@@ -617,4 +629,4 @@
         });
     </script>
 </body>
-</html>
+</html>             
